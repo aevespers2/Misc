@@ -15,13 +15,14 @@ The next release-related decision is an Architect ownership decision: migrate XY
 - Python package `xyz-firmware-defense` version `0.3.0` under `phantomblock/`.
 - CLI, dashboard/API, collection and heuristic assessment code, extension interface, and dry-run isolation abstraction.
 - Unit-test source, CI workflow configuration, live-image definition, standalone-binary/SBOM build scripts, example trusted-baseline configuration, compliance mappings, and MkDocs documentation.
-- GitHub Pages workflow configured to publish documentation from `main` with Pages and OIDC write permissions.
+- GitHub Pages workflow retained as a deployment capability, but automatic `main` publication was removed by commit `c1d5a1d8dc0d729cdb077c0dcac11dc582c2488c`; it is manual-only and fails closed unless `release.md` is explicitly marked `READY`.
+- Deployment review and containment evidence are recorded in `deploy.md` at commit `8f82b63c02f21e4c9cea0530fb86c1db7e42f099`.
 - Merged PR #1 head `8a56fc7f2fc0b2b0af3c7b47e06bfad70546b48d` has one successful `PhantomBlock CI` run (`29553292217`) in which editable installation, Ruff, and Pytest completed successfully.
 
 ### Not established
 
 - Passing status checks or workflow runs for the current release-planning head; the observed current head has no attached status records or pull-request workflow run.
-- Retained test artifacts from the successful PR run; the run published no workflow artifacts and does not certify a release candidate after the subsequent documentation, branding, packaging, and publication commits.
+- Retained test artifacts from the successful PR run; the run published no workflow artifacts and does not certify a release candidate after the subsequent documentation, branding, packaging, publication-containment, and release-record commits.
 - Representative BIOS/UEFI, NIC, BMC, SSD, chipset, operating-system, switch, or PCAP validation.
 - False-positive/false-negative characterization, parser fuzzing, adversarial corpus, Secure Boot or measured-boot validation, signed provenance, or reproducible release evidence.
 - Trusted firmware-source governance, approved credentials or privilege model, extension security review, production isolation safety, incident-response integration, or rollback verification.
@@ -70,7 +71,7 @@ A future candidate may include only the explicitly reviewed subset of:
 
 | Gate | Status | Requirement |
 |---|---|---|
-| Scope containment | REVIEW | Freeze feature, packaging, publication, and deployment promotion while preserving the current prototype and history. |
+| Scope containment | PARTIAL | Automatic Pages publication is disabled and the workflow fails closed on release status; freeze feature, packaging, and other deployment promotion while preserving the current prototype and history. |
 | Ownership | FAIL | Architect approves one dedicated repository and owner, or records retirement/archive. |
 | Product definition | FAIL | Intended user, authorized-use boundary, supported platforms, claims, limitations, and non-goals are approved. |
 | Repository overlap | FAIL | Compare and disposition overlap with existing security, Bridge, AionUi, verification, and QSO repositories. |
@@ -80,9 +81,9 @@ A future candidate may include only the explicitly reviewed subset of:
 | Validation | NO ACCEPTED EVIDENCE | Representative hardware, negative/adversarial fixtures, fuzzing, false-positive/negative analysis, and isolation rollback pass. |
 | Dependencies/build | UNVERIFIED | Clean environments reproduce installation, tests, binary/image outputs, SBOMs, and checksums. |
 | CI/status checks | PARTIAL | A prior merged PR head passed editable install, Ruff, and Pytest, but the current planning head has no attached checks and the successful run retained no release artifacts. One immutable candidate must reproduce complete checks and artifacts. |
-| Publication | FAIL | GitHub Pages and other public outputs are explicitly approved or disabled. |
+| Publication | CONTAINED | Automatic publication is disabled; an explicit future Pages/publication target and approval remain required. |
 | Security/privacy | FAIL | Credential, privilege, network, firmware, evidence, privacy, disclosure, and incident-response boundaries pass review. |
-| Provenance/rollback | NO EVIDENCE | Source archive, hashes, signed provenance, migration record, rollback, and retirement procedure are retained. |
+| Provenance/rollback | PARTIAL | Publication-containment commits and a deployment record exist; candidate source archives, hashes, signed provenance, migration record, runtime rollback, and retirement procedure remain absent. |
 | Approval | PENDING | Explicit release approval only after every blocking gate passes. |
 
 ## Required Artifacts
@@ -104,7 +105,7 @@ Reject or withdraw a candidate if ownership remains ambiguous; implementation co
 - Architect decision to migrate XYZ into a dedicated owning repository or retire/archive it.
 - Missing `punchlist.md` and accepted repository-health evidence.
 - Approval of intended user, authorized-use boundary, repository overlap, license, naming, package identity, and version lineage.
-- Explicit decision to disable or approve automatic GitHub Pages publication and all other public artifacts.
+- Explicit approval of any future GitHub Pages publication or other public artifact; automatic publication is currently disabled.
 - Exact-candidate clean build, complete tests, security review, representative hardware and adversarial validation, retained artifacts, SBOM/checksums, provenance, and rollback drill.
 - Trusted firmware and data-source governance, credential/privilege model, extension boundary, false-positive/false-negative characterization, and incident/disclosure policy.
 
@@ -114,3 +115,4 @@ Reject or withdraw a candidate if ownership remains ambiguous; implementation co
 - 2026-07-16 — Detected the addition of the XYZ prototype, CI, packaging, compliance documentation, and automatic Pages publication before incubation approval.
 - 2026-07-16 — Preserved the prototype as unaccepted evidence and blocked release pending containment, dedicated ownership or retirement, license, validation, security, publication, provenance, and explicit approval.
 - 2026-07-16 — Reclassified CI evidence as partial after verifying one successful merged-PR lint/test run with no retained artifacts; no current-head or release-candidate evidence was established.
+- 2026-07-16 — Disabled automatic Pages publication, added a fail-closed explicit-release-readiness gate, and recorded deployment review evidence in `deploy.md`; no deployment ran.
