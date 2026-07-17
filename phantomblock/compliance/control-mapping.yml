@@ -1,0 +1,43 @@
+schema: phantomblock-control-mapping/v1
+status: implementation-evidence-only
+controls:
+  - capability: read-only trusted boot environment
+    nist_800_53: [CM-2, CM-6, SI-7, SR-9]
+    nist_800_171_r3: [03.04.01, 03.04.02, 03.14.01]
+    evidence: [image/mkosi.conf, image/build.sh]
+  - capability: hardware and firmware inventory
+    nist_800_53: [CM-8, PM-5, SI-7, SR-4]
+    nist_800_171_r3: [03.04.10, 03.14.01]
+    evidence: [src/phantomblock/core.py]
+  - capability: trusted firmware hash verification
+    nist_800_53: [SI-7, SI-7.1, SR-11]
+    nist_800_171_r3: [03.14.01, 03.14.02]
+    evidence: [src/phantomblock/core.py, config/known_good.example.yml]
+  - capability: kernel anomaly detection
+    nist_800_53: [SI-3, SI-4, SI-7]
+    nist_800_171_r3: [03.14.03, 03.14.04]
+    evidence: [src/phantomblock/core.py]
+  - capability: out-of-band interface detection
+    nist_800_53: [AC-17, CA-7, CM-7, SC-7]
+    nist_800_171_r3: [03.01.16, 03.13.01]
+    evidence: [src/phantomblock/core.py]
+  - capability: external traffic inspection
+    nist_800_53: [AU-6, CA-7, SI-4, SC-7]
+    nist_800_171_r3: [03.03.05, 03.14.06]
+    evidence: [src/phantomblock/core.py]
+  - capability: guarded isolation workflow
+    nist_800_53: [AC-3, AC-6, CM-3, IR-4]
+    nist_800_171_r3: [03.01.02, 03.04.03, 03.06.01]
+    evidence: [src/phantomblock/isolation.py]
+  - capability: extensibility guardrails
+    nist_800_53: [CM-3, SA-11, SA-15, SR-3]
+    nist_ssdf: [PW.4, PW.7, RV.1]
+    evidence: [src/phantomblock/extensions.py, src/phantomblock/policy.py]
+  - capability: binary packaging and software bill of materials
+    nist_800_53: [CM-14, SA-10, SR-4, SR-11]
+    nist_ssdf: [PS.1, PS.2, PW.4, RV.1]
+    evidence: [packaging/phantomblock.spec, packaging/build-binary.sh]
+notes:
+  - Control identifiers require validation against the final system categorization and selected baseline.
+  - DISA STIG and Army overlays must be mapped during the RMF tailoring process.
+  - This mapping is not an authorization or certification claim.
