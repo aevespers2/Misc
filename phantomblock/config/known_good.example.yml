@@ -1,0 +1,10 @@
+schema: phantomblock-known-good/v1
+source:
+  description: Populate only from independently verified vendor releases
+  retrieved_at: null
+artifacts:
+  - component: example-uefi-capsule
+    vendor: example
+    version: "0.0.0"
+    path: /evidence/vendor/example-uefi.cap
+    sha256: 0000000000000000000000000000000000000000000000000000000000000000
