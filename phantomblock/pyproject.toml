@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "phantomblock"
-version = "0.1.0"
-description = "Defensive firmware and hardware integrity assessment MVP"
+version = "0.2.0"
+description = "Defensive firmware and hardware integrity assessment platform"
 requires-python = ">=3.11"
 dependencies = [
   "fastapi>=0.115,<1",
@@ -17,9 +17,13 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<9", "ruff>=0.6,<1"]
+build = ["pyinstaller>=6.10,<7", "cyclonedx-bom>=5,<7"]
 
 [project.scripts]
 phantomblock = "phantomblock.cli:main"
+
+[project.entry-points."phantomblock.capabilities"]
+# Third-party passive extensions register here as name = "package.module:Factory".
 
 [tool.setuptools.packages.find]
 where = ["src"]
