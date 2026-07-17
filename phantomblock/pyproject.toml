@@ -3,9 +3,9 @@ requires = ["setuptools>=69", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "phantomblock"
-version = "0.2.0"
-description = "Defensive firmware and hardware integrity assessment platform"
+name = "xyz-firmware-defense"
+version = "0.3.0"
+description = "XYZ defensive firmware and hardware integrity assessment platform"
 requires-python = ">=3.11"
 dependencies = [
   "fastapi>=0.115,<1",
@@ -18,8 +18,10 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8,<9", "ruff>=0.6,<1"]
 build = ["pyinstaller>=6.10,<7", "cyclonedx-bom>=5,<7"]
+docs = ["mkdocs>=1.6,<2", "mkdocs-material>=9.5,<10"]
 
 [project.scripts]
+xyz = "phantomblock.cli:main"
 phantomblock = "phantomblock.cli:main"
 
 [project.entry-points."phantomblock.capabilities"]
