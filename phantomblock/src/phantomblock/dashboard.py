@@ -16,7 +16,7 @@ class IsolationRequest(BaseModel):
 
 
 def create_app(state_dir: Path) -> FastAPI:
-    app = FastAPI(title="PhantomBlock", version="0.1.0")
+    app = FastAPI(title="XYZ", version="0.3.0")
     adapter = DryRunSwitchAdapter()
 
     def reports() -> list[dict]:
@@ -53,12 +53,12 @@ def create_app(state_dir: Path) -> FastAPI:
             for r in reports()
         ) or "<tr><td colspan='4'>No reports yet</td></tr>"
         return f"""<!doctype html><html><head><meta charset='utf-8'>
-<title>PhantomBlock</title><style>
+<title>XYZ</title><style>
 body{{font-family:system-ui;margin:2rem;max-width:1100px}}table{{border-collapse:collapse;width:100%}}
 th,td{{border:1px solid #bbb;padding:.65rem;text-align:left}}th{{background:#eee}}
 code{{background:#eee;padding:.15rem .3rem}}</style></head><body>
-<h1>PhantomBlock Fleet Status</h1>
-<p>Evidence-first MVP. A finding marked <code>investigate</code> is not proof of compromise.</p>
+<h1>XYZ Fleet Status</h1>
+<p>Evidence-first defensive assessment. An <code>investigate</code> result is not proof of compromise.</p>
 <table><thead><tr><th>Host</th><th>Status</th><th>Collected</th><th>Findings</th></tr></thead>
 <tbody>{rows}</tbody></table></body></html>"""
 
