@@ -2,92 +2,90 @@
 
 ## Current Decision
 
-Status: `BLOCKED — INCUBATION CONTRACT AND RELEASE EVIDENCE REQUIRED`
+Status: `BLOCKED — SCOPE CONFLICT, OWNERSHIP, VALIDATION, AND PUBLICATION APPROVAL REQUIRED`
 
-`Misc` is a non-authoritative holding repository for bounded experimental proposals. The repository contains an initial task chain and changelog defining the incubation boundary, but it has no `punchlist.md`, no repository-health evidence, no retained CI or status-check evidence for an immutable release candidate, and no approved intake/exit contract. No implementation, package, service, deployment, or production capability is eligible for release.
+`Misc` remains a non-authoritative holding repository at portfolio priority P4. Fifteen commits added the XYZ defensive firmware-assessment prototype before the documentation-first incubation contract was approved. The code, tests, workflows, packaging definitions, compliance mappings, and documentation are preserved as prototype evidence; they do not establish an accepted product, operational detector, certification, authorization, release, or deployment.
+
+The next release-related decision is an Architect ownership decision: migrate XYZ and its full history into a dedicated approved repository, or retire/archive it with limitations preserved. No package, live image, dashboard, documentation site, switch adapter, service, or integration is eligible for release from `Misc` while that decision and the gates below remain unresolved.
+
+## Evidence Classification
+
+### Implemented prototype artifacts
+
+- Python package `xyz-firmware-defense` version `0.3.0` under `phantomblock/`.
+- CLI, dashboard/API, collection and heuristic assessment code, extension interface, and dry-run isolation abstraction.
+- Unit-test source, CI workflow configuration, live-image definition, standalone-binary/SBOM build scripts, example trusted-baseline configuration, compliance mappings, and MkDocs documentation.
+- GitHub Pages workflow configured to publish documentation from `main` with Pages and OIDC write permissions.
+
+### Not established
+
+- Passing status checks or retained exact-commit workflow evidence for the reviewed head.
+- Representative BIOS/UEFI, NIC, BMC, SSD, chipset, operating-system, switch, or PCAP validation.
+- False-positive/false-negative characterization, parser fuzzing, adversarial corpus, Secure Boot or measured-boot validation, signed provenance, or reproducible release evidence.
+- Trusted firmware-source governance, approved credentials or privilege model, extension security review, production isolation safety, incident-response integration, or rollback verification.
+- License approval, CMMC status, STIG approval, Army authorization, Authority to Operate, certification, or comprehensive implant-detection assurance.
 
 ## Versioning
 
-- Scheme: Semantic Versioning for approved documentation contracts and any later isolated experiment artifacts.
-- First eligible candidate: `0.0.1-incubation-charter`.
-- The first candidate is documentation-only and grants no execution, network, credential, publication, or deployment authority.
-- Each later experiment requires its own proposal identifier and prerelease version until promoted to an approved owning repository or retired.
-- Tag only one immutable reviewed commit after all applicable gates pass.
+- Existing `0.3.0` package metadata is prototype metadata, not an approved release version.
+- A dedicated owning repository must select the authoritative name, package identity, version lineage, license, and compatibility policy.
+- The first eligible release candidate must be generated from one immutable reviewed commit after migration and all applicable gates pass.
+- Tags, packages, images, Pages publication, or release artifacts must not imply acceptance before explicit approval.
 
-## Release Scope
+## Candidate Scope After Ownership Approval
 
-The first candidate may include only:
+A future candidate may include only the explicitly reviewed subset of:
 
-- the approved repository purpose and non-goals;
-- an intake template with proposal ID, owner, intended user, problem statement, dependencies, and overlap review;
-- evidence-state, data, privacy, license, credential, network, resource, and stop-condition fields;
-- experiment directory and naming conventions;
-- validation or falsification requirements;
-- promotion, migration, archival, deletion, provenance, and rollback rules;
-- a completed release punch list and repository-health record for the exact candidate commit.
+- passive inventory and evidence collection;
+- firmware and baseline verification with independently governed trusted sources;
+- bounded kernel and management-channel heuristics;
+- offline external-PCAP analysis;
+- read-only dashboard and machine-readable reports;
+- reviewed passive extension interfaces;
+- disruptive isolation only behind a separately approved, authenticated, allowlisted, audited, dry-run-first interface with rollback verification;
+- reproducible packaging, SBOM, checksums, signed provenance, and documentation whose claims match retained evidence.
 
 ## Explicit Exclusions
 
-- Executable experiments, packages, services, deployments, or public capability claims.
-- Credentials, sensitive datasets, unrestricted networking, remote mutation, autonomous publication, or production integrations.
-- Work that duplicates or overrides ownership in QSO, Bridge, VTX, Alistaire, AionUi, temporal-invariant, or other established repositories.
-- Promotion of an experiment without a dedicated approved destination, retained evidence, and migration/rollback plan.
-
-## Selected Completed Work
-
-Candidate inputs currently present:
-
-- a task chain defining the incubation repository role, first objective, success criteria, non-goals, priority, and builder rules;
-- a changelog recording the documentation-only product boundary and absence of authorized deployment.
-
-These items are not selected as releasable completed work until the intake/exit contract is approved, a punch list exists and is completed, documentation is independently verified, provenance is retained, and the exact candidate receives release approval.
-
-## Planned Changelog Entries
-
-- `Added`: approved incubation intake, evidence, ownership-conflict, promotion, migration, archival, and retirement contract.
-- `Security`: explicit credential, network, data, privacy, license, resource, and stop boundaries.
-- `Documentation`: experiment naming, validation evidence, limitations, provenance, and disposition instructions.
-- `Release`: documentation-only charter artifact, checksums, source archive, repository-health report, rollback record, and approval decision.
-- `Excluded`: implementation and deployment authority before a separately approved experiment proposal.
+- Unauthorized assessment, credential bypass, exploitation, firmware flashing, destructive remediation, covert collection, unrestricted networking, or default-active switch isolation.
+- Customer data, credentials, sensitive firmware images, exploit details, or security findings in the public repository.
+- Certification, DoD/Army authorization, operational-readiness, or comprehensive-detection claims unsupported by formal evidence.
+- Permanent production ownership by `Misc` or bypass of existing Bridge, AionUi, verification, QSO, or other repository boundaries.
 
 ## Acceptance Gates
 
 | Gate | Status | Requirement |
 |---|---|---|
-| Product approval | PENDING | Architect approves the incubation purpose, intake fields, exit criteria, and repository-conflict policy. |
-| Task completion | FAIL | P0 is `DONE` with evidence and a repository punch list exists and is complete for the candidate. |
-| Tests/validation | NO EVIDENCE | Templates and rules are checked for completeness, deterministic identifiers, invalid/missing-field rejection, and promotion/retirement decision coverage. |
-| Security/privacy | NO EVIDENCE | Credential, network, data, privacy, license, resource, publication, and remote-mutation boundaries are reviewed and fail closed. |
-| Documentation | PARTIAL | Task chain and changelog exist; intake template, operating instructions, examples, limitations, and disposition workflow are missing or unverified. |
-| Repository ownership | PENDING | The charter proves this repository does not duplicate or supersede established repository authority. |
-| Provenance | NO EVIDENCE | Exact commit, review record, commands/results, artifact hashes, repository URL, and approval are retained. |
-| CI/status checks | NO EVIDENCE | No immutable release candidate has retained status checks or workflow evidence. |
-| Rollback | NO EVIDENCE | Rejected proposals and charter changes can be reverted without losing history, evidence, or disposition records. |
+| Scope containment | REVIEW | Freeze feature, packaging, publication, and deployment promotion while preserving the current prototype and history. |
+| Ownership | FAIL | Architect approves one dedicated repository and owner, or records retirement/archive. |
+| Product definition | FAIL | Intended user, authorized-use boundary, supported platforms, claims, limitations, and non-goals are approved. |
+| Repository overlap | FAIL | Compare and disposition overlap with existing security, Bridge, AionUi, verification, and QSO repositories. |
+| License and data rights | FAIL | Select a license and approve dependencies, firmware sources, PCAP handling, documentation, and third-party content. |
+| Threat model | PARTIAL | Existing documentation is reviewed against privilege, extension, firmware, network, dashboard, packaging, and publication risks. |
+| Validation | NO ACCEPTED EVIDENCE | Representative hardware, negative/adversarial fixtures, fuzzing, false-positive/negative analysis, and isolation rollback pass. |
+| Dependencies/build | UNVERIFIED | Clean environments reproduce installation, tests, binary/image outputs, SBOMs, and checksums. |
+| CI/status checks | NO EVIDENCE | One immutable candidate has retained passing checks and artifacts. |
+| Publication | FAIL | GitHub Pages and other public outputs are explicitly approved or disabled. |
+| Security/privacy | FAIL | Credential, privilege, network, firmware, evidence, privacy, disclosure, and incident-response boundaries pass review. |
+| Provenance/rollback | NO EVIDENCE | Source archive, hashes, signed provenance, migration record, rollback, and retirement procedure are retained. |
 | Approval | PENDING | Explicit release approval only after every blocking gate passes. |
 
-## Artifact Requirements
+## Required Artifacts
 
-- Approved incubation charter and machine-readable or structured intake template.
-- Completed `punchlist.md` and repository-health report tied to the exact candidate commit.
-- Validation fixtures for complete, incomplete, overlapping, unsafe, unlicensed, credential-dependent, and unbounded proposals.
-- Security/privacy/license boundary review and repository-ownership comparison record.
-- Promotion, migration, archive, retirement, and rollback examples.
-- Source archive, SHA-256 checksums, provenance manifest, review/approval record, and release notes.
+- Approved ownership and migration or retirement record.
+- Product directive, supported-platform matrix, threat model, authorized-use policy, and repository-overlap decision.
+- License and third-party dependency/data/firmware provenance record.
+- Complete punch list and repository-health report tied to the exact candidate commit.
+- Representative positive, negative, adversarial, malformed-input, extension, privilege, network, and isolation fixtures.
+- Hardware-lab results, false-positive/false-negative characterization, performance limits, and unsupported-platform behavior.
+- Reproducible build/test logs, SBOM, checksums, vulnerability results, source archive, signed provenance, review record, and rollback instructions.
 
 ## Rollback Criteria
 
-Reject or withdraw the candidate if the repository purpose remains ambiguous; an experiment can bypass intake or approval; ownership overlaps an established repository; required evidence, data rights, privacy, license, credential, network, resource, or stop fields are missing; invalid proposals do not fail closed; implementation or deployment authority is implied; provenance or hashes are incomplete; documentation cannot be reproduced; or promotion/retirement cannot preserve history and limitations. Restore the previous reviewed commit and retain the rejected candidate, findings, and disposition record.
-
-## Unresolved Blockers
-
-- The incubation intake and exit contract requires approval.
-- `punchlist.md` is absent.
-- No repository-health, validation, security/privacy, documentation-verification, provenance, checksum, artifact, or rollback evidence exists.
-- No immutable release candidate has retained CI workflow or status-check evidence.
-- No proposal has yet demonstrated the complete intake-to-promotion-or-retirement lifecycle.
-- No release approver or accepted ownership-conflict disposition has been recorded.
+Reject or withdraw a candidate if ownership remains ambiguous; implementation continues in `Misc` without approval; public documentation implies release; license or data rights are unresolved; trusted baselines are derived from an assessed host or lack provenance; privileged or disruptive behavior is not fail-closed; extension boundaries permit uncontrolled mutation; representative and adversarial validation is absent; claims exceed evidence; builds or checks cannot be reproduced; provenance is incomplete; rollback cannot be verified; or an authorizing party declines deployment. Preserve source history, failed evidence, limitations, and disposition records.
 
 ## Release Log
 
-- 2026-07-16 — Established `0.0.1-incubation-charter` as the first possible documentation-only candidate and held it blocked pending product approval and complete release evidence.
-- 2026-07-16 — Recorded the missing punch list, absent repository-health/CI evidence, required artifacts, acceptance gates, rollback criteria, and prohibition on implementation or deployment authority.
+- 2026-07-16 — Established `Misc` as a documentation-first incubation repository with no implementation or deployment authority.
+- 2026-07-16 — Detected the addition of the XYZ prototype, CI, packaging, compliance documentation, and automatic Pages publication before incubation approval.
+- 2026-07-16 — Preserved the prototype as unaccepted evidence and blocked release pending containment, dedicated ownership or retirement, license, validation, security, publication, provenance, and explicit approval.
