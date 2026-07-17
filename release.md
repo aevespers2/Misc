@@ -4,7 +4,7 @@
 
 Status: `BLOCKED — INCUBATION CONTRACT AND RELEASE EVIDENCE REQUIRED`
 
-`Misc` is a non-authoritative holding repository for bounded experimental proposals. The repository contains an initial task chain and changelog defining the incubation boundary, but it has no `punchlist.md`, no repository-health evidence, no CI or status checks at current head `773bc166645f04358165c436cbf63ab2aea68ba4`, and no approved intake/exit contract. No implementation, package, service, deployment, or production capability is eligible for release.
+`Misc` is a non-authoritative holding repository for bounded experimental proposals. The repository contains an initial task chain and changelog defining the incubation boundary, but it has no `punchlist.md`, no repository-health evidence, no retained CI or status-check evidence for an immutable release candidate, and no approved intake/exit contract. No implementation, package, service, deployment, or production capability is eligible for release.
 
 ## Versioning
 
@@ -61,7 +61,7 @@ These items are not selected as releasable completed work until the intake/exit 
 | Documentation | PARTIAL | Task chain and changelog exist; intake template, operating instructions, examples, limitations, and disposition workflow are missing or unverified. |
 | Repository ownership | PENDING | The charter proves this repository does not duplicate or supersede established repository authority. |
 | Provenance | NO EVIDENCE | Exact commit, review record, commands/results, artifact hashes, repository URL, and approval are retained. |
-| CI/status checks | NO EVIDENCE | Current head has no status checks or workflow evidence. |
+| CI/status checks | NO EVIDENCE | No immutable release candidate has retained status checks or workflow evidence. |
 | Rollback | NO EVIDENCE | Rejected proposals and charter changes can be reverted without losing history, evidence, or disposition records. |
 | Approval | PENDING | Explicit release approval only after every blocking gate passes. |
 
@@ -83,7 +83,7 @@ Reject or withdraw the candidate if the repository purpose remains ambiguous; an
 - The incubation intake and exit contract requires approval.
 - `punchlist.md` is absent.
 - No repository-health, validation, security/privacy, documentation-verification, provenance, checksum, artifact, or rollback evidence exists.
-- Current head has no CI workflow run or status checks.
+- No immutable release candidate has retained CI workflow or status-check evidence.
 - No proposal has yet demonstrated the complete intake-to-promotion-or-retirement lifecycle.
 - No release approver or accepted ownership-conflict disposition has been recorded.
 
