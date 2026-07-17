@@ -1,32 +1,41 @@
 # Task Chain
 
-Architect owns intake, scope, promotion, and retirement decisions. Builders may preserve evidence and create bounded experiments only after a proposal is classified and assigned an explicit owner.
+Architect owns intake, scope, promotion, and retirement decisions. Builders preserve evidence and may continue bounded implementation only after the proposal is classified, assigned an explicit owner, and approved against repository, security, publication, and release boundaries.
 
 States: `PROPOSED` · `READY` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE`
 
 ## Product directive
 
-- **Next objective:** Define and approve a lightweight incubation contract for experimental security, verification, and systems work before this repository accumulates implementation.
-- **User outcome:** A researcher can place an early proposal or isolated proof of concept in one clearly labeled location, understand that it is non-authoritative, and know the evidence required to promote it into a dedicated repository or retire it.
-- **MVP scope:** documentation-only intake template; proposal metadata; owner and intended user; problem statement; relationship to existing repositories; evidence classification; data, privacy, license, credential, and network boundaries; resource and stop limits; experiment directory convention; promotion, migration, archival, and deletion criteria; rollback/provenance rules.
-- **Priority:** Portfolio priority is `P4 — HOLDING / INCUBATION`. This repository does not supersede QSO-GENOMES acceptance, QuantumStateObjects reproducibility, or any existing repository's active P0. Its immediate local priority is preventing scope dumping and duplicate ownership.
-- **Success criteria:** every future experiment has a unique identifier, named owner, non-overlapping purpose, explicit dependencies, bounded inputs/outputs, tests or falsification criteria, evidence state, license/data classification, stop condition, and documented destination or retirement rule; no artifact is presented as an accepted product capability from this repository alone.
-- **Non-goals:** becoming a catch-all production monorepo; duplicating QSO, Bridge, VTX, Alistaire, AionUi, or temporal-invariant ownership; storing credentials or sensitive datasets; autonomous networking or deployment; publishing unreviewed packages; or using incubation status to bypass repository-specific product and security gates.
-- **Release rationale:** A documentation-only incubation boundary preserves useful exploratory work while preventing ambiguous ownership, misleading capability claims, and permanent accumulation of unsupported experiments.
+- **Next objective:** Contain and classify the newly added XYZ defensive firmware-assessment prototype, then obtain an Architect decision to migrate it into a dedicated owning repository or retire/archive it before additional capability, packaging, publication, or deployment work proceeds.
+- **User outcome:** A defensive researcher can evaluate one clearly labeled prototype without mistaking repository code, documentation, package metadata, compliance mappings, or deployment workflows for independently validated detection capability, certification, operational readiness, or authorization to assess systems.
+- **MVP scope:** preserve the current prototype and commit history; inventory implemented collectors, firmware/hash checks, kernel and management-channel heuristics, PCAP analysis, dashboard/API, extension interface, dry-run isolation abstraction, image/packaging scripts, tests, CI, documentation, and compliance mappings; define the intended user and authorized-use boundary; compare ownership with existing security, Bridge, AionUi, verification, and QSO repositories; select a dedicated destination or retirement path; choose a license; document data, firmware, credential, network, privilege, hardware, evidence, false-positive, publication, and rollback boundaries; establish representative validation and adversarial fixtures; and prohibit release or deployment until evidence and approvals are complete.
+- **Priority:** Portfolio priority remains `P4 — HOLDING / INCUBATION`; this does not supersede QSO-GENOMES acceptance or any existing repository P0. A local containment task is `P0` only because implementation and an automatic Pages publication workflow were added before the approved incubation contract, creating a documented scope conflict.
+- **Success criteria:** the prototype has one approved owner and destination or a recorded retirement decision; every claimed capability is classified as implemented code, configured workflow, locally tested behavior, unverified proposal, or accepted evidence; repository overlap is resolved; no license, data-rights, credential, firmware, hardware, networking, or publication ambiguity remains; the Pages and release posture is explicitly approved or disabled; representative and adversarial tests quantify supported platforms and limitations; reproducible status-check evidence is retained; and no operational, certification, DoD/Army authorization, or detection-assurance claim exceeds the evidence.
+- **Non-goals:** treating `Misc` as the permanent production repository; continuing feature expansion while ownership is unresolved; scanning systems without explicit authorization; exploiting management interfaces; flashing firmware; enabling disruptive isolation by default; storing customer data, credentials, firmware images, or sensitive findings; claiming comprehensive implant detection, CMMC status, STIG approval, Army authorization, or an ATO; or allowing documentation publication to imply product release.
+- **Release rationale:** Preserving the prototype while freezing promotion protects useful research evidence without rewarding a bypass of the repository intake contract. A dedicated, approved owner is required before a privileged defensive assessment tool can be packaged, publicly represented, deployed, or integrated.
+
+## Scope-conflict finding
+
+The repository's approved documentation stated that implementation and deployment were prohibited until the incubation contract was accepted. Fifteen subsequent commits added a Python package branded XYZ under `phantomblock/`, version `0.3.0`, source and tests, live-image and binary-build scripts, compliance mappings, CI, extensive documentation, and a GitHub Pages workflow with `pages: write` and `id-token: write`. These artifacts are preserved as prototype implementation and configured automation; they are not accepted release, deployment, detection, certification, or authorization evidence.
 
 ## Active chain
 
 | Priority | Task | Owner | Depends on | Status | Acceptance criteria |
 |---|---|---|---|---|---|
-| P0 | Approve the incubation intake and exit contract | Architect | — | READY | Intake fields, evidence states, trust/data/license boundaries, repository-conflict check, promotion criteria, archive/retirement criteria, and rollback/provenance rules are documented. |
-| P1 | Inventory and classify the first proposed experiment | Architect | P0 | PROPOSED | The proposal has a unique scope, named user outcome, existing-repository comparison, risk limits, validation plan, and disposition. |
-| P2 | Run one bounded proof of concept | Builder | P1 and explicit approval | PROPOSED | Work is isolated, deterministic where practical, credential-free, reversible, and produces retained evidence without claiming production capability. |
-| P3 | Promote, migrate, or retire the experiment | Architect | P2 | PROPOSED | Evidence and history move to an approved owning repository, or the experiment is archived with the reason and limitations preserved. |
+| Local P0 | Freeze promotion and reconcile the XYZ prototype with the incubation boundary | Architect | — | REVIEW | Current files and commits are preserved; no additional feature, package, release, or deployment claim proceeds; automatic publication and workflow authority are reviewed; implemented behavior is separated from documentation claims and missing evidence. |
+| Local P1 | Approve dedicated ownership or retirement | Architect | Local P0 | BLOCKED | One destination repository, owner, intended user, overlap disposition, license path, authorized-use policy, and migration/retirement plan are approved. |
+| Local P2 | Establish a bounded validation candidate | Builder | Local P1 and explicit approval | BLOCKED | The approved destination contains reproducible dependencies, threat model, representative hardware matrix, trusted-baseline provenance, passive/dry-run defaults, adversarial fixtures, false-positive/false-negative characterization, SBOM/checksums, CI evidence, and rollback procedures. |
+| Local P3 | Approve publication or release | Architect | Local P2 | BLOCKED | One immutable candidate is independently reviewed; documentation claims match evidence; Pages/package/image publication is explicitly approved; security, legal, licensing, provenance, and operational gates pass. |
+| Portfolio P4 | Resume general incubation intake | Architect | Local P0 | BLOCKED | The intake and exit contract is approved and future proposals cannot add implementation before classification. |
 
 ## Builder rules
 
-Do not add implementation until P0 and the specific experiment's P1 classification are approved. Stop on duplicate repository ownership, unclear data rights, credential requirements, remote mutation, undefined validation, or missing rollback.
+Do not expand XYZ or add another experiment until Local P0 and Local P1 are resolved. Preserve all existing code and evidence. Stop on unclear ownership, unlicensed dependencies or content, untrusted firmware baselines, credential requirements, privileged mutation, unsupported hardware claims, public disclosure risk, automatic publication without approval, undefined validation, or missing rollback.
 
 ## Builder log
 
-Record approvals, proposal IDs, source commits, commands/results, environment and dependency versions, data/license classification, artifact hashes, limitations, destination/retirement decisions, and rollback evidence.
+Record approvals, proposal IDs, source commits, commands/results, workflow and status-check URLs, environment and dependency versions, hardware and firmware sources, data/license classification, artifact hashes, limitations, ownership destination, publication decision, migration/retirement decision, and rollback evidence.
+
+- 2026-07-16 — Initialized `Misc` as a documentation-first incubation repository at portfolio priority P4.
+- 2026-07-16 — Detected a scope conflict after fifteen commits added the XYZ/PhantomBlock prototype, packaging and image scripts, compliance and documentation assets, CI, and automatic GitHub Pages deployment before the intake contract or experiment classification was approved.
+- 2026-07-16 — Preserved the implementation as unaccepted prototype evidence, froze product promotion, and made dedicated-repository ownership or retirement the next approval decision without changing the portfolio priority of active repositories.
