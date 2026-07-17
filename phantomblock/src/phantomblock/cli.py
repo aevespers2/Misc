@@ -11,7 +11,10 @@ from .isolation import DryRunSwitchAdapter
 
 
 def build_parser() -> argparse.ArgumentParser:
-    parser = argparse.ArgumentParser(prog="phantomblock")
+    parser = argparse.ArgumentParser(
+        prog="xyz",
+        description="XYZ defensive firmware, hardware, and out-of-band assessment platform",
+    )
     sub = parser.add_subparsers(dest="command", required=True)
 
     collect = sub.add_parser("collect", help="Collect trusted-environment hardware and kernel evidence")
@@ -23,7 +26,7 @@ def build_parser() -> argparse.ArgumentParser:
     pcap.add_argument("pcap", type=Path)
     pcap.add_argument("--output", type=Path, default=Path("state/pcap-report.json"))
 
-    dash = sub.add_parser("dashboard", help="Serve the fleet reporting dashboard")
+    dash = sub.add_parser("dashboard", help="Serve the XYZ fleet reporting dashboard")
     dash.add_argument("--state-dir", type=Path, default=Path("state"))
     dash.add_argument("--host", default="127.0.0.1")
     dash.add_argument("--port", type=int, default=8080)
