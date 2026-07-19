@@ -18,12 +18,17 @@ States: `PROPOSED` · `READY` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE
 
 The repository's approved documentation stated that implementation and deployment were prohibited until the incubation contract was accepted. Fifteen subsequent commits added a Python package branded XYZ under `phantomblock/`, version `0.3.0`, source and tests, live-image and binary-build scripts, compliance mappings, CI, extensive documentation, and a GitHub Pages workflow with `pages: write` and `id-token: write`. These artifacts are preserved as prototype implementation and configured automation; they are not accepted release, deployment, detection, certification, or authorization evidence.
 
+## Documentation milestone
+
+A documentation-only review package now clarifies the repository overview, Pages landing content, architecture and trust zones, repository ownership boundaries, design contracts, developer onboarding, contribution rules, promotion/retirement path, and release punch list. This package does not approve the prototype, alter runtime behavior, widen supported platforms, or advance release status. It remains in review until strict documentation build evidence and architectural approval are recorded.
+
 ## Active chain
 
 | Priority | Task | Owner | Depends on | Status | Acceptance criteria |
 |---|---|---|---|---|---|
 | Local P0 | Freeze promotion and reconcile the XYZ prototype with the incubation boundary | Architect | — | REVIEW | Current files and commits are preserved; no additional feature, package, release, or deployment claim proceeds; automatic publication and workflow authority are reviewed; implemented behavior is separated from documentation claims and missing evidence. |
-| Local P1 | Approve dedicated ownership or retirement | Architect | Local P0 | BLOCKED | One destination repository, owner, intended user, overlap disposition, license path, authorized-use policy, and migration/retirement plan are approved. |
+| Local P0-DOC | Complete containment-oriented documentation foundation | Builder / Reviewer | Local P0 | REVIEW | README, Pages overview, repository boundaries, architecture diagrams, design contracts, onboarding, contribution policy, ownership/release guide, and punch list align with `taskchain.md`, `release.md`, and `changelog.md`; `mkdocs build --strict` evidence is retained. |
+| Local P1 | Approve dedicated ownership or retirement | Architect | Local P0 and Local P0-DOC | BLOCKED | One destination repository, owner, intended user, overlap disposition, license path, authorized-use policy, and migration/retirement plan are approved. |
 | Local P2 | Establish a bounded validation candidate | Builder | Local P1 and explicit approval | BLOCKED | The approved destination contains reproducible dependencies, threat model, representative hardware matrix, trusted-baseline provenance, passive/dry-run defaults, adversarial fixtures, false-positive/false-negative characterization, SBOM/checksums, CI evidence, and rollback procedures. |
 | Local P3 | Approve publication or release | Architect | Local P2 | BLOCKED | One immutable candidate is independently reviewed; documentation claims match evidence; Pages/package/image publication is explicitly approved; security, legal, licensing, provenance, and operational gates pass. |
 | Portfolio P4 | Resume general incubation intake | Architect | Local P0 | BLOCKED | The intake and exit contract is approved and future proposals cannot add implementation before classification. |
@@ -32,6 +37,8 @@ The repository's approved documentation stated that implementation and deploymen
 
 Do not expand XYZ or add another experiment until Local P0 and Local P1 are resolved. Preserve all existing code and evidence. Stop on unclear ownership, unlicensed dependencies or content, untrusted firmware baselines, credential requirements, privileged mutation, unsupported hardware claims, public disclosure risk, automatic publication without approval, undefined validation, or missing rollback.
 
+Documentation work may clarify present source, status, boundaries, evidence, reproduction, migration, retirement, and release requirements. It must not describe configured or proposed behavior as validated or approved.
+
 ## Builder log
 
 Record approvals, proposal IDs, source commits, commands/results, workflow and status-check URLs, environment and dependency versions, hardware and firmware sources, data/license classification, artifact hashes, limitations, ownership destination, publication decision, migration/retirement decision, and rollback evidence.
@@ -39,3 +46,4 @@ Record approvals, proposal IDs, source commits, commands/results, workflow and s
 - 2026-07-16 — Initialized `Misc` as a documentation-first incubation repository at portfolio priority P4.
 - 2026-07-16 — Detected a scope conflict after fifteen commits added the XYZ/PhantomBlock prototype, packaging and image scripts, compliance and documentation assets, CI, and automatic GitHub Pages deployment before the intake contract or experiment classification was approved.
 - 2026-07-16 — Preserved the implementation as unaccepted prototype evidence, froze product promotion, and made dedicated-repository ownership or retirement the next approval decision without changing the portfolio priority of active repositories.
+- 2026-07-19 — Prepared a substantial documentation-only containment milestone: expanded project overview and Pages content; added architecture, repository-boundary, design-contract, onboarding, contribution, ownership/release, and punch-list documentation; retained all release and implementation holds pending review and strict-build evidence.
