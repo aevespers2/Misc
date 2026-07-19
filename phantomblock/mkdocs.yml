@@ -1,27 +1,40 @@
-site_name: XYZ
-site_description: Defensive firmware, hardware integrity, and out-of-band assessment platform
+site_name: XYZ / PhantomBlock Prototype
+site_description: Incubation documentation for an unaccepted defensive firmware-assessment prototype
 repo_url: https://github.com/aevespers2/Misc
 repo_name: aevespers2/Misc
 docs_dir: docs
 site_dir: site
 
+# Publication is controlled separately by the repository-level fail-closed
+# GitHub Pages workflow and release.md. A successful documentation build does
+# not authorize deployment or release.
+
 theme:
   name: material
   features:
     - navigation.sections
+    - navigation.indexes
     - navigation.top
     - content.code.copy
     - search.suggest
+    - search.highlight
 
 nav:
-  - Overview: index.md
-  - Why XYZ Exists: purpose.md
-  - Architecture: architecture.md
-  - Threat Model: threat-model.md
-  - Deployment: deployment.md
-  - Extensions: extensions.md
-  - Validation Roadmap: validation.md
-  - Compliance Center: compliance.md
+  - Project:
+      - Status and scope: index.md
+      - Why the prototype exists: purpose.md
+      - Repository boundaries: repository-boundaries.md
+      - Ownership and release: ownership-and-release.md
+  - Engineering:
+      - Architecture: architecture.md
+      - Design contracts: design-contracts.md
+      - Threat model: threat-model.md
+      - Extensions: extensions.md
+  - Development:
+      - Developer onboarding: developer-onboarding.md
+      - Validation roadmap: validation.md
+      - Deployment review: deployment.md
+      - Compliance planning: compliance.md
 
 markdown_extensions:
   - admonition
@@ -30,4 +43,11 @@ markdown_extensions:
   - toc:
       permalink: true
   - pymdownx.details
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+plugins:
+  - search
