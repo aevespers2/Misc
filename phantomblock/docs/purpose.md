@@ -1,38 +1,71 @@
-# Why XYZ Exists
+# Why the Prototype Exists
 
-## The defensive gap
+## Research motivation
 
-Most endpoint security products receive telemetry from the operating system they are protecting. That model works well for many threats, but it becomes weaker when persistence or communications occur below the OS in firmware, management controllers, device processors, or network paths the host cannot observe.
+Conventional endpoint security commonly receives telemetry from the operating system it protects. That model is useful for many threats, but it may provide incomplete visibility when relevant state resides in firmware, management controllers, device processors, privileged kernel paths, or external network observation points.
 
-XYZ was built to reduce that blind spot by starting from independently booted, read-only media and collecting evidence before the installed operating system is trusted.
+XYZ / PhantomBlock is a research prototype exploring whether a separately controlled review environment can collect and organize evidence from those areas without treating the installed operating system as the sole root of trust.
 
-## Intended use
+This is a research motivation, not a claim that the prototype currently detects implants, establishes a trustworthy scanner, supports representative hardware, or is suitable for operational deployment.
 
-XYZ is intended for authorized:
+## Intended bounded evaluation
 
-- incident-response laboratories;
-- firmware and platform-security research;
-- high-assurance asset validation;
-- hardware-baseline verification;
-- defensive evaluation of out-of-band management exposure;
-- fleet triage where below-OS persistence is a credible concern.
+Subject to explicit authorization and an approved owning repository, the prototype may be useful for evaluating design questions related to:
 
-## Threats of interest
+- incident-response laboratory workflows;
+- firmware and platform-security evidence collection;
+- hardware inventory and baseline comparison;
+- out-of-band management exposure review;
+- offline analysis of externally captured network traffic;
+- conservative aggregation of low-level observations;
+- separation of passive collection from disruptive response.
 
-XYZ is designed to help investigate stealth persistence, unauthorized firmware changes, undocumented hardware, exposed management planes, unexpected device behavior, and communications that bypass conventional endpoint visibility. A userland process—including software written in .NET, C#, native code, scripts, or another runtime—may be relevant to an investigation, but XYZ does not assume that a particular language or framework proves the presence of a firmware implant.
+The current repository does not approve real-system assessment, production use, or expansion into additional platforms and integrations.
+
+## Threats and anomalies of interest
+
+The design considers evidence associated with:
+
+- unexpected firmware or device-version differences;
+- undocumented or unexpected hardware inventory;
+- exposed management-plane interfaces;
+- kernel modules, taint, hooks, or low-level indicators requiring review;
+- network behavior visible from a TAP, SPAN, or mirror source;
+- persistence or communication paths that may not be fully represented in ordinary endpoint telemetry.
+
+An observation is not attribution or proof of compromise. A language, runtime, process, port, hash mismatch, or heuristic signal must not be treated as dispositive without an approved corroboration policy and independently reviewable evidence.
+
+## Design values
+
+The prototype is organized around these values:
+
+1. **Authorization first** — assessment authority is external and must be explicit.
+2. **Evidence before conclusions** — observations and limitations remain reviewable.
+3. **Independent baseline governance** — a target does not certify itself.
+4. **Conservative interpretation** — unsupported and ambiguous states stay visible.
+5. **Passive defaults** — collection should avoid mutation.
+6. **Separated response authority** — disruptive action requires additional approval and controls.
+7. **Reproducibility** — results are tied to exact source, tools, environment, and inputs.
+8. **Claims discipline** — implementation, configuration, testing, validation, and approval are distinct states.
+9. **Reversibility** — migration, rollback, and retirement remain available.
 
 ## Non-goals
 
 XYZ is not:
 
 - an offensive exploitation framework;
-- a firmware flashing utility;
-- a credential-bypass tool;
-- a universal malware detector;
+- a credential-bypass or persistence mechanism;
+- a firmware-flashing utility;
+- a universal malware or implant detector;
+- an autonomous scanner or remediation service;
 - a substitute for vendor analysis or laboratory hardware forensics;
-- proof that any specific nation-state, organization, or actor is responsible;
-- automatically compliant with NIST, DoD, Army, CMMC, or DISA requirements.
+- proof that any person, organization, or nation is responsible for an observation;
+- automatically compliant with NIST, DoD, Army, CMMC, DISA, or other requirements;
+- certified, authorized, production-ready, or released;
+- a permanent product owned by `Misc`.
 
-## Design intent
+## Why the current hold matters
 
-The project prioritizes trust minimization, reproducibility, evidence provenance, conservative classification, extensibility, dry-run response, and clear authorization boundaries.
+The repository accumulated implementation, packaging, and Pages artifacts before a dedicated owner and incubation contract were approved. Preserving that work is useful, but allowing it to continue expanding in `Misc` would make ownership and authority ambiguous.
+
+The correct next step is therefore architectural review: assign the prototype to a dedicated approved repository with a charter, or retire/archive it with provenance and limitations preserved.
