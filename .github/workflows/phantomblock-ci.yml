@@ -4,17 +4,30 @@ on:
   pull_request:
     paths:
       - 'phantomblock/**'
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'taskchain.md'
+      - 'release.md'
+      - 'changelog.md'
+      - 'punchlist.md'
       - '.github/workflows/phantomblock-ci.yml'
   push:
     branches: [main]
     paths:
       - 'phantomblock/**'
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - 'taskchain.md'
+      - 'release.md'
+      - 'changelog.md'
+      - 'punchlist.md'
+      - '.github/workflows/phantomblock-ci.yml'
 
 permissions:
   contents: read
 
 jobs:
-  test:
+  test-and-docs:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -26,6 +39,11 @@ jobs:
           python-version: '3.12'
           cache: pip
           cache-dependency-path: phantomblock/pyproject.toml
-      - run: python -m pip install -e '.[dev]'
-      - run: ruff check src tests
-      - run: pytest -q
+      - name: Install development and documentation dependencies
+        run: python -m pip install -e '.[dev,docs]'
+      - name: Lint source and tests
+        run: ruff check src tests
+      - name: Run unit tests
+        run: pytest -q
+      - name: Build documentation with strict checks
+        run: mkdocs build --strict
