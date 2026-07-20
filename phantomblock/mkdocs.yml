@@ -24,6 +24,7 @@ nav:
       - Status and scope: index.md
       - Why the prototype exists: purpose.md
       - Repository boundaries: repository-boundaries.md
+      - Obstruction and gluing analysis: obstruction-and-gluing.md
       - Ownership and release: ownership-and-release.md
   - Engineering:
       - Architecture: architecture.md
