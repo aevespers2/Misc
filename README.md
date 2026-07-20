@@ -11,7 +11,7 @@ The repository currently contains the **XYZ / PhantomBlock defensive firmware-as
 - GitHub Pages publication: manual-only and fail-closed unless `release.md` is explicitly marked `READY`.
 - Implementation scope: frozen except for evidence-preserving corrections or work explicitly approved after architectural review.
 
-See [`taskchain.md`](taskchain.md), [`release.md`](release.md), and [`changelog.md`](changelog.md) for the authoritative planning and release posture.
+See [`taskchain.md`](taskchain.md), [`release.md`](release.md), [`punchlist.md`](punchlist.md), and [`changelog.md`](changelog.md) for the authoritative planning and release posture.
 
 ## Repository purpose
 
@@ -39,6 +39,21 @@ The `phantomblock/` subtree contains an implemented Python prototype with:
 
 These artifacts demonstrate a prototype shape only. They do **not** establish representative hardware support, detection accuracy, trusted firmware provenance, production isolation safety, certification, an Authority to Operate, or operational readiness.
 
+## Proposed A.L.I.S.T.A.I.R.E. relationship
+
+The lowest-overlap integration candidate is to treat PhantomBlock as a **specialist host-firmware, kernel, management-plane, and offline-PCAP observation adapter** beneath Repository `0`'s portable first-install security workflow.
+
+Under that proposal:
+
+- PhantomBlock collects and classifies bounded evidence;
+- Repository `0` composes host observations, prepares proposals, and performs only separately authorized remediation;
+- Repository `1` owns candidate device identity, baseline identity, proposal admission, capabilities, revocations, canonical receipts, and recovery checkpoints;
+- Bridge may transport approved envelopes without creating trust;
+- QSO-STUDIO or AionUi may display reviewed results without gaining approval or mutation authority;
+- `Misc` retains no permanent operational authority.
+
+This is a documentation recommendation only. It does not approve migration, privileged collection, credentials, network access, active response, publication, release, or deployment.
+
 ## Documentation
 
 The Pages-ready documentation is stored in [`phantomblock/docs/`](phantomblock/docs/) and is built with [`phantomblock/mkdocs.yml`](phantomblock/mkdocs.yml).
@@ -47,6 +62,7 @@ Key guides:
 
 - [Project status and scope](phantomblock/docs/index.md)
 - [Repository boundaries](phantomblock/docs/repository-boundaries.md)
+- [Obstruction and gluing analysis](phantomblock/docs/obstruction-and-gluing.md)
 - [Architecture](phantomblock/docs/architecture.md)
 - [Design contracts](phantomblock/docs/design-contracts.md)
 - [Developer onboarding](phantomblock/docs/developer-onboarding.md)
@@ -79,7 +95,9 @@ Before contributing, read [`CONTRIBUTING.md`](CONTRIBUTING.md). Documentation, e
 
 The next substantive decision is to either:
 
-- migrate XYZ and its history into a dedicated, approved repository with a charter, owner, license, authorized-use policy, validation plan, and release controls; or
+- migrate XYZ and its history into a dedicated, approved security-adapter repository with a charter, owner, license, authorized-use policy, device and evidence contracts, validation plan, and release controls; or
 - retire/archive the prototype while preserving source history, evidence, limitations, and the reason for disposition.
 
-Until that decision is recorded, `Misc` remains an incubation repository and the prototype remains unreleased.
+If migration is selected, the Architect must also approve the Repository `0` and Repository `1` gluing contracts for device identity, baseline identity, evidence envelopes, capabilities, receipts, revocations, temporal semantics, privacy, incident handling, and rollback.
+
+Until those decisions are recorded, `Misc` remains an incubation repository and the prototype remains unreleased.
