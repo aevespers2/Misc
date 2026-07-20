@@ -12,6 +12,7 @@ All notable product, architecture, implementation, documentation, release, and d
 - 2026-07-16 — Detected that fifteen later commits added an XYZ defensive firmware-assessment prototype before the incubation contract or experiment classification was approved.
 - 2026-07-16 — Preserved XYZ as unaccepted prototype evidence and changed the immediate local objective to containment, ownership review, and either migration to a dedicated repository or retirement. Portfolio priority remains P4.
 - 2026-07-20 — Proposed the lowest-overlap retained role as a specialist host-firmware, kernel, management-plane, and offline-PCAP observation adapter beneath Repository `0`, with Repository `1` retaining device-baseline, capability, revocation, canonical-receipt, and recovery authority. This is not an approved product or integration decision.
+- 2026-07-20 — Added three explicit disposition options: dedicated PhantomBlock adapter, approved modular consolidation with JusticeForMe, or evidence-preserving retirement/archive.
 
 ### Architecture
 
@@ -26,6 +27,8 @@ All notable product, architecture, implementation, documentation, release, and d
 - 2026-07-20 — Added an obstruction and gluing ledger covering eighteen identity, ownership, device, baseline, evidence, freshness, artifact-binding, result, authority, credential, network, privacy, extension, platform, temporal, incident, publication, and rollback incompatibilities.
 - 2026-07-20 — Added pairwise contract edges and triple-overlap witnesses across device → PhantomBlock → Repository `0`, Repository `0` → Repository `1` → response adapter, PhantomBlock → Bridge → review interface, and incident authority → Repository `1` → downstream consumers.
 - 2026-07-20 — Added a proposed host-observation envelope minimum without changing current package output or claiming a trusted signing system.
+- 2026-07-20 — Added a portable first-install mapping that keeps PhantomBlock below Repository `0` and preserves Repository `1` as the candidate authority for device identity, baselines, capabilities, revocations, receipts, checkpoints, and recovery.
+- 2026-07-20 — Added a JusticeForMe overlap analysis proposing separate collector domains, one canonical host-observation envelope, deterministic duplicate/conflict handling, shared privacy rules, and retained compatibility fixtures.
 
 ### Implementation
 
@@ -34,7 +37,7 @@ All notable product, architecture, implementation, documentation, release, and d
 - Added a GitHub Pages workflow that can publish documentation using `pages: write` and `id-token: write` permissions.
 - No retained workflow status or exact-commit validation evidence was found for the reviewed release-planning head; configured workflows are not equivalent to passing release evidence.
 - 2026-07-19 — No runtime, collector, heuristic, package, API, deployment, credential, networking, or target-mutation behavior changed in the documentation milestone.
-- 2026-07-20 — No runtime, evidence schema, collector, adapter, credential, capability, remediation, publication, or deployment behavior changed in the gluing-analysis milestone.
+- 2026-07-20 — No runtime, evidence schema, collector, adapter, credential, capability, remediation, publication, or deployment behavior changed in the gluing-analysis or overlap milestones.
 
 ### Documentation
 
@@ -46,7 +49,8 @@ All notable product, architecture, implementation, documentation, release, and d
 - 2026-07-19 — Reorganized MkDocs navigation and added Mermaid diagram support.
 - 2026-07-19 — Updated `taskchain.md`, `release.md`, and this changelog to record the documentation milestone without advancing implementation or release scope.
 - 2026-07-20 — Added `phantomblock/docs/obstruction-and-gluing.md` and linked it from the root README and MkDocs navigation.
-- 2026-07-20 — Expanded `taskchain.md`, `punchlist.md`, and `release.md` with device-trust, cross-repository contract, gluing-fixture, incident, privacy, temporal, migration, retirement, and rollback gates.
+- 2026-07-20 — Added `phantomblock/docs/portable-host-observation.md` and `phantomblock/docs/host-observation-overlap.md` and linked both from the README and Pages navigation.
+- 2026-07-20 — Expanded `taskchain.md`, `punchlist.md`, and `release.md` with device-trust, JusticeForMe overlap, canonical-field, deduplication, conflict, gluing-fixture, incident, privacy, temporal, migration, consolidation, retirement, and rollback gates.
 
 ### Security and compliance
 
@@ -56,21 +60,22 @@ All notable product, architecture, implementation, documentation, release, and d
 - 2026-07-19 — Strengthened warnings against real credentials, proprietary firmware, real incident data, unauthorized assessment, remote dashboard exposure, unreviewed extensions, and active response integrations.
 - 2026-07-20 — Clarified that observation cannot self-authorize response; Repository `0` proposal preparation and Repository `1` capability authority remain distinct and unapproved.
 - 2026-07-20 — Added fail-closed requirements for device identity, baseline provenance, freshness, replay, artifact binding, privacy classification, temporal ordering, corrections, revocations, and incident recovery.
+- 2026-07-20 — Clarified that duplicate observations from JusticeForMe and PhantomBlock are not independent corroboration unless source independence is demonstrated.
 
 ### Release
 
 - No package, image, service, deployment, certification, portfolio integration, or production capability is approved from the current prototype.
-- The first eligible decision is not a release: the Architect must approve a dedicated owning repository and migration plan or retire/archive the prototype.
-- Release remains blocked on ownership, product and schema identity, gluing contracts, license, threat model, trusted-baseline provenance, representative and adversarial validation, reproducible CI, SBOM/checksums, security review, rollback, and explicit approval.
+- The first eligible decision is not a release: the Architect must approve a dedicated adapter, approved JusticeForMe consolidation, or retirement/archive.
+- Release remains blocked on ownership, product and schema identity, host-observation overlap, gluing contracts, license, threat model, trusted-baseline provenance, representative and adversarial validation, reproducible CI, SBOM/checksums, security review, rollback, and explicit approval.
 - 2026-07-19 — Classified the documentation foundation and repository punch list as partial review evidence; strict documentation build, accessibility/link review, and independent approval remain required.
-- 2026-07-20 — Classified the obstruction/gluing ledger as architectural review evidence only; it does not authorize migration, integration, release, or deployment.
+- 2026-07-20 — Classified the obstruction/gluing and host-observation overlap guides as architectural review evidence only; they do not authorize migration, consolidation, integration, release, or deployment.
 
 ### Deployment
 
 - Automatic Pages publication was removed; the retained workflow is manual-only and fails closed unless `release.md` is explicitly marked `READY`.
 - No operational scanner, live image, dashboard, switch isolation adapter, host-observation integration, or external service is authorized for deployment.
 - 2026-07-19 — Documentation changes did not alter the fail-closed Pages workflow or authorize a deployment.
-- 2026-07-20 — Gluing-analysis changes did not alter workflow authority, network access, credentials, or deployment posture.
+- 2026-07-20 — Gluing and overlap documentation did not alter workflow authority, network access, credentials, or deployment posture.
 
 ## Entry format
 
