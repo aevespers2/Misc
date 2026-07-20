@@ -52,6 +52,8 @@ Under that proposal:
 - QSO-STUDIO or AionUi may display reviewed results without gaining approval or mutation authority;
 - `Misc` retains no permanent operational authority.
 
+JusticeForMe and PhantomBlock currently overlap as Linux host-observation prototypes. The documentation proposes a low-coupling split in which JusticeForMe owns general operating-system, account, package, service, persistence, and network-configuration audit surfaces, while PhantomBlock owns specialist hardware, firmware, kernel-integrity, management-plane, and explicitly supplied offline-PCAP evidence. Shared fields require one canonical observation envelope, deduplication rule, conflict model, privacy policy, and Repository `0` / Repository `1` gluing contract.
+
 This is a documentation recommendation only. It does not approve migration, privileged collection, credentials, network access, active response, publication, release, or deployment.
 
 ## Documentation
@@ -62,6 +64,8 @@ Key guides:
 
 - [Project status and scope](phantomblock/docs/index.md)
 - [Repository boundaries](phantomblock/docs/repository-boundaries.md)
+- [Portable host-observation role](phantomblock/docs/portable-host-observation.md)
+- [JusticeForMe and PhantomBlock overlap](phantomblock/docs/host-observation-overlap.md)
 - [Obstruction and gluing analysis](phantomblock/docs/obstruction-and-gluing.md)
 - [Architecture](phantomblock/docs/architecture.md)
 - [Design contracts](phantomblock/docs/design-contracts.md)
@@ -95,9 +99,10 @@ Before contributing, read [`CONTRIBUTING.md`](CONTRIBUTING.md). Documentation, e
 
 The next substantive decision is to either:
 
-- migrate XYZ and its history into a dedicated, approved security-adapter repository with a charter, owner, license, authorized-use policy, device and evidence contracts, validation plan, and release controls; or
+- migrate XYZ and its history into a dedicated, approved security-adapter repository with a charter, owner, license, authorized-use policy, device and evidence contracts, validation plan, and release controls;
+- merge the approved observation subset with JusticeForMe under one shared contract and preserved histories; or
 - retire/archive the prototype while preserving source history, evidence, limitations, and the reason for disposition.
 
-If migration is selected, the Architect must also approve the Repository `0` and Repository `1` gluing contracts for device identity, baseline identity, evidence envelopes, capabilities, receipts, revocations, temporal semantics, privacy, incident handling, and rollback.
+If migration or consolidation is selected, the Architect must also approve the Repository `0` and Repository `1` gluing contracts for device identity, baseline identity, evidence envelopes, canonical fields, deduplication, conflict resolution, capabilities, receipts, revocations, temporal semantics, privacy, incident handling, and rollback.
 
 Until those decisions are recorded, `Misc` remains an incubation repository and the prototype remains unreleased.
