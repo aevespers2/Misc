@@ -6,12 +6,14 @@ XYZ is preserved in `Misc` as an implemented but unaccepted prototype. Local dev
 
 Before changing code or documentation, read:
 
-1. root [`taskchain.md`](../../taskchain.md);
-2. root [`release.md`](../../release.md);
-3. root [`changelog.md`](../../changelog.md);
+1. root `taskchain.md` directly in the repository;
+2. root `release.md` directly in the repository;
+3. root `changelog.md` directly in the repository;
 4. [Repository boundaries](repository-boundaries.md);
 5. [Threat model](threat-model.md);
 6. [Design contracts](design-contracts.md).
+
+The three root planning records intentionally remain outside the MkDocs `docs_dir`; they are authoritative repository records rather than duplicated site pages.
 
 ## Supported review environment
 
