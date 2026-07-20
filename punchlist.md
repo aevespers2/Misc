@@ -1,6 +1,6 @@
 # Repository Punch List
 
-This punch list tracks documentation, repository-health, ownership, validation, and release work for the `Misc` incubation repository and the retained XYZ / PhantomBlock prototype. It does not authorize implementation expansion.
+This punch list tracks documentation, repository health, ownership, integration, validation, and release work for the `Misc` incubation repository and the retained XYZ / PhantomBlock prototype. It does not authorize implementation expansion.
 
 Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 
@@ -14,9 +14,10 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 | Document repository and portfolio boundaries | IN REVIEW | `repository-boundaries.md` reviewed and linked from Pages navigation. |
 | Document architecture, trust zones, data flow, and runtime sequence | IN REVIEW | Architecture guide contains Mermaid diagrams and evidence classifications. |
 | Document design contracts and claim language | IN REVIEW | `design-contracts.md` reviewed against current source and release posture. |
+| Add obstruction and gluing analysis | IN REVIEW | `obstruction-and-gluing.md` records identity, authority, evidence, privacy, temporal, incident, and rollback incompatibilities plus pairwise and triple-overlap witnesses. |
 | Add bounded developer onboarding and contribution guidance | IN REVIEW | `developer-onboarding.md` and `CONTRIBUTING.md` pass documentation review. |
 | Add ownership, promotion, retirement, release, and rollback decision path | IN REVIEW | `ownership-and-release.md` reviewed by Architect. |
-| Build Pages documentation with strict link and navigation checks | OPEN | Retained `mkdocs build --strict` result tied to the PR head. |
+| Build Pages documentation with strict link and navigation checks | OPEN | Retained `mkdocs build --strict` result tied to the exact PR head. |
 | Verify documentation accessibility basics | OPEN | Heading order, link labels, tables, contrast/theme defaults, keyboard navigation, and diagram alternatives reviewed. |
 
 ## P1 — ownership and product definition
@@ -24,13 +25,28 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 | Item | Status | Acceptance evidence |
 |---|---|---|
 | Select dedicated owning repository or approve retirement | BLOCKED | Architect decision record. |
-| Approve canonical product, repository, package, CLI, and version identities | BLOCKED | Charter and migration record. |
-| Identify maintainer, security contact, release authority, and publication authority | BLOCKED | Ownership record. |
+| Approve or reject the proposed Repository `0` specialist observation-adapter role | BLOCKED | Portfolio architecture decision. |
+| Approve canonical product, repository, package, CLI, schema, and version identities | BLOCKED | Charter and migration record. |
+| Identify maintainer, security contact, release authority, publication authority, incident owner, and revoker | BLOCKED | Ownership record. |
 | Define intended users and authorized-use policy | BLOCKED | Approved product directive. |
-| Define supported and unsupported platforms | BLOCKED | Platform matrix. |
-| Resolve overlap with Bridge, AionUi, verification, QSO, and portfolio Pages repositories | BLOCKED | Repository-boundary decision. |
-| Select license and approve dependency, data, firmware, and documentation rights | BLOCKED | License and provenance review. |
+| Define supported and unsupported platforms | BLOCKED | Platform matrix with `UNKNOWN` behavior. |
+| Resolve overlap with Repository `0`, Repository `1`, Bridge, AionUi, QSO-STUDIO, verification, security, and portfolio Pages repositories | BLOCKED | Repository-boundary and gluing decision. |
+| Select license and approve dependency, data, firmware, PCAP, and documentation rights | BLOCKED | License and provenance review. |
 | Preserve full history during migration or archive | BLOCKED | Verified migration/archive procedure and commit mapping. |
+
+## P1-G — cross-repository gluing
+
+| Item | Status | Acceptance evidence |
+|---|---|---|
+| Assign device-identity and ownership-scope contract owner | BLOCKED | Versioned identity schema and lifecycle approved. |
+| Assign baseline-policy and firmware-manifest authority | BLOCKED | Signed baseline identity, applicability, update, and revocation rules. |
+| Approve PhantomBlock → Repository `0` evidence-envelope contract | BLOCKED | Schema, artifact binding, completeness, limitations, privacy, and malformed-input fixtures. |
+| Approve Repository `0` → Repository `1` proposal route | BLOCKED | Canonical quarantine route and stale/replay/wrong-device fixtures. |
+| Approve capability, receipt, revocation, correction, and checkpoint ownership | BLOCKED | Repository `1` authority contract and shared fixtures. |
+| Define temporal and ordering semantics | BLOCKED | Source time, receive time, uncertainty, replay, correction, and revocation order rules. |
+| Define Bridge transport and interface-display boundaries | BLOCKED | Round-trip integrity, minimization, revocation, and non-actionable UI fixtures. |
+| Define incident freeze, evidence preservation, lost-device recovery, and bounded restart | BLOCKED | Portfolio state machine and tabletop evidence. |
+| Validate pairwise and triple-overlap witnesses | BLOCKED | Immutable fixture suite proving meaning remains consistent across all documented paths. |
 
 ## P2 — security and validation candidate
 
@@ -41,12 +57,12 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 | Produce SBOM, checksums, and vulnerability review | BLOCKED | Candidate artifacts and reports. |
 | Approve trusted-baseline governance | BLOCKED | Source, signature, applicability, update, revocation, and licensing policy. |
 | Validate representative hardware and firmware | BLOCKED | Approved test matrix and retained results. |
-| Add negative, adversarial, malformed, and unsupported fixtures | BLOCKED | Fixture inventory and results. |
+| Add negative, adversarial, malformed, incomplete, stale, replayed, and unsupported fixtures | BLOCKED | Fixture inventory and results. |
 | Characterize false positives and false negatives | BLOCKED | Methods, corpus, results, and limitations. |
 | Review PCAP parser limits and privacy handling | BLOCKED | Security and data-handling report. |
 | Review extension provenance, isolation, and resource controls | BLOCKED | Extension security assessment. |
 | Review dashboard authentication, exposure, retention, and tenancy boundary | BLOCKED | Approved deployment design or explicit local-only restriction. |
-| Verify dry-run response and any approved active-response rollback | BLOCKED | Idempotency, audit, rollback, and partial-failure evidence. |
+| Verify dry-run response and any approved active-response rollback | BLOCKED | Idempotency, audit, capability, rollback, and partial-failure evidence. |
 | Complete threat model and incident/disclosure plan | BLOCKED | Independent review and closure record. |
 
 ## P3 — release and publication
@@ -56,26 +72,29 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 | Align all public claims with candidate evidence | BLOCKED | Claims-to-evidence matrix. |
 | Build source, package, image, and documentation artifacts reproducibly where approved | BLOCKED | Retained artifacts and logs. |
 | Sign provenance and record approval chain | BLOCKED | Signature and attestation bundle. |
-| Verify deployment and rollback procedures | BLOCKED | Staged drill and results. |
+| Verify deployment, migration, retirement, and rollback procedures | BLOCKED | Staged drills and results. |
 | Approve Pages, package, image, or service publication targets | BLOCKED | Explicit publication decision. |
-| Record support, vulnerability response, withdrawal, and deprecation policies | BLOCKED | Operational ownership documents. |
+| Record support, vulnerability response, withdrawal, correction, revocation, and deprecation policies | BLOCKED | Operational ownership documents. |
 | Mark `release.md` ready only after every blocking gate passes | BLOCKED | Architect and independent reviewer approval. |
 
 ## Documentation health checklist
 
 - [ ] All Pages navigation targets exist.
-- [ ] `mkdocs build --strict` passes at the PR head.
+- [ ] `mkdocs build --strict` passes at the exact PR head.
 - [ ] Root README links resolve.
 - [ ] Mermaid diagrams render or have meaningful surrounding text.
 - [ ] No page claims certification, authorization, release, or comprehensive detection.
 - [ ] Current commands and package metadata match source.
 - [ ] Proposed schemas and controls are labeled as proposals.
 - [ ] Sensitive-data and authorization warnings are prominent.
-- [ ] `taskchain.md`, `release.md`, and `changelog.md` describe the same current posture.
+- [ ] `taskchain.md`, `release.md`, `punchlist.md`, and `changelog.md` describe the same current posture.
 - [ ] Migration and retirement remain available outcomes.
+- [ ] Repository `0` / Repository `1` roles remain proposals until approved.
+- [ ] Observation cannot self-authorize response.
 
 ## Evidence log
 
 Add dated entries only when evidence is retained and tied to an immutable commit, pull request, workflow, artifact, or decision record.
 
 - 2026-07-19 — Documentation milestone prepared on a feature branch: expanded repository overview; revised Pages landing and architecture; added repository boundaries, design contracts, developer onboarding, ownership/release guidance, contribution rules, and this punch list. Validation and architectural gates remain blocked pending review and retained build evidence.
+- 2026-07-20 — Added an obstruction and gluing ledger with eighteen active incompatibilities, a proposed bounded Repository `0` adapter role, Repository `1` authority boundary, evidence-envelope proposal, and required pairwise and triple-overlap witnesses. No implementation or authority changed.
