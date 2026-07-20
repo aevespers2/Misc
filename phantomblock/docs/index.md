@@ -4,7 +4,7 @@
 
 XYZ is an **implemented but unaccepted defensive research prototype** preserved inside the `Misc` incubation repository. The source tree contains collection, reporting, extension, packaging, test, and documentation artifacts; those artifacts do not by themselves establish a supported product, validated detector, release candidate, certification, deployment authorization, or permission to assess systems.
 
-The authoritative repository posture is defined by the root-level [`taskchain.md`](../../taskchain.md), [`release.md`](../../release.md), and [`changelog.md`](../../changelog.md). Where older prototype language sounds more mature than the retained evidence, those planning records control.
+The authoritative repository posture is defined by the root-level records `taskchain.md`, `release.md`, and `changelog.md`. Those files intentionally remain outside the MkDocs `docs_dir`; review them directly in the repository before changing this prototype. Where older prototype language sounds more mature than the retained evidence, those planning records control.
 
 !!! warning "Release and publication are blocked"
     Ownership, product definition, licensing, trusted-baseline governance, representative validation, security review, provenance, rollback, publication, and explicit approval remain unresolved. The Pages workflow is manual-only and fails closed unless `release.md` is explicitly marked `READY`.
