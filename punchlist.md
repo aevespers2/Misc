@@ -14,9 +14,11 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 | Document repository and portfolio boundaries | IN REVIEW | `repository-boundaries.md` reviewed and linked from Pages navigation. |
 | Document architecture, trust zones, data flow, and runtime sequence | IN REVIEW | Architecture guide contains Mermaid diagrams and evidence classifications. |
 | Document design contracts and claim language | IN REVIEW | `design-contracts.md` reviewed against current source and release posture. |
+| Add portable host-observation role | IN REVIEW | `portable-host-observation.md` maps PhantomBlock beneath Repository `0` while preserving Repository `1` authority and non-capabilities. |
+| Add JusticeForMe overlap decision guide | IN REVIEW | `host-observation-overlap.md` defines candidate domains, shared envelope, deduplication, conflict resolution, fixtures, and migration options. |
 | Add obstruction and gluing analysis | IN REVIEW | `obstruction-and-gluing.md` records identity, authority, evidence, privacy, temporal, incident, and rollback incompatibilities plus pairwise and triple-overlap witnesses. |
 | Add bounded developer onboarding and contribution guidance | IN REVIEW | `developer-onboarding.md` and `CONTRIBUTING.md` pass documentation review. |
-| Add ownership, promotion, retirement, release, and rollback decision path | IN REVIEW | `ownership-and-release.md` reviewed by Architect. |
+| Add ownership, promotion, consolidation, retirement, release, and rollback decision path | IN REVIEW | `ownership-and-release.md` and overlap guides reviewed by Architect. |
 | Build Pages documentation with strict link and navigation checks | OPEN | Retained `mkdocs build --strict` result tied to the exact PR head. |
 | Verify documentation accessibility basics | OPEN | Heading order, link labels, tables, contrast/theme defaults, keyboard navigation, and diagram alternatives reviewed. |
 
@@ -24,15 +26,16 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 
 | Item | Status | Acceptance evidence |
 |---|---|---|
-| Select dedicated owning repository or approve retirement | BLOCKED | Architect decision record. |
+| Select dedicated owning repository, approved consolidation, or retirement | BLOCKED | Architect decision record. |
 | Approve or reject the proposed Repository `0` specialist observation-adapter role | BLOCKED | Portfolio architecture decision. |
-| Approve canonical product, repository, package, CLI, schema, and version identities | BLOCKED | Charter and migration record. |
+| Resolve JusticeForMe overlap through separate-adapter, merge, or retirement decision | BLOCKED | Approved host-observation ownership record. |
+| Approve canonical product, repository, package, CLI, schema, field, and version identities | BLOCKED | Charter and migration/consolidation record. |
 | Identify maintainer, security contact, release authority, publication authority, incident owner, and revoker | BLOCKED | Ownership record. |
 | Define intended users and authorized-use policy | BLOCKED | Approved product directive. |
-| Define supported and unsupported platforms | BLOCKED | Platform matrix with `UNKNOWN` behavior. |
-| Resolve overlap with Repository `0`, Repository `1`, Bridge, AionUi, QSO-STUDIO, verification, security, and portfolio Pages repositories | BLOCKED | Repository-boundary and gluing decision. |
+| Define supported and unsupported platforms | BLOCKED | Platform and privilege matrix with `UNKNOWN` behavior. |
+| Resolve overlap with Repository `0`, Repository `1`, JusticeForMe, Bridge, AionUi, QSO-STUDIO, verification, security, and portfolio Pages repositories | BLOCKED | Repository-boundary and gluing decision. |
 | Select license and approve dependency, data, firmware, PCAP, and documentation rights | BLOCKED | License and provenance review. |
-| Preserve full history during migration or archive | BLOCKED | Verified migration/archive procedure and commit mapping. |
+| Preserve full histories during migration, consolidation, or archive | BLOCKED | Verified procedure and commit mapping. |
 
 ## P1-G — cross-repository gluing
 
@@ -40,6 +43,9 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 |---|---|---|
 | Assign device-identity and ownership-scope contract owner | BLOCKED | Versioned identity schema and lifecycle approved. |
 | Assign baseline-policy and firmware-manifest authority | BLOCKED | Signed baseline identity, applicability, update, and revocation rules. |
+| Assign canonical host-observation envelope and field-vocabulary owner | BLOCKED | Versioned package accepted by Repository `0`, Repository `1`, and adapter owners. |
+| Define JusticeForMe and PhantomBlock collector domains | BLOCKED | Non-overlapping charter or approved modular consolidation. |
+| Define duplicate, corroborating, conflicting, partial, stale, replayed, and wrong-device semantics | BLOCKED | Deterministic rules and retained fixtures. |
 | Approve PhantomBlock → Repository `0` evidence-envelope contract | BLOCKED | Schema, artifact binding, completeness, limitations, privacy, and malformed-input fixtures. |
 | Approve Repository `0` → Repository `1` proposal route | BLOCKED | Canonical quarantine route and stale/replay/wrong-device fixtures. |
 | Approve capability, receipt, revocation, correction, and checkpoint ownership | BLOCKED | Repository `1` authority contract and shared fixtures. |
@@ -57,7 +63,7 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 | Produce SBOM, checksums, and vulnerability review | BLOCKED | Candidate artifacts and reports. |
 | Approve trusted-baseline governance | BLOCKED | Source, signature, applicability, update, revocation, and licensing policy. |
 | Validate representative hardware and firmware | BLOCKED | Approved test matrix and retained results. |
-| Add negative, adversarial, malformed, incomplete, stale, replayed, and unsupported fixtures | BLOCKED | Fixture inventory and results. |
+| Add negative, adversarial, malformed, incomplete, duplicate, conflicting, stale, replayed, wrong-device, and unsupported fixtures | BLOCKED | Fixture inventory and results. |
 | Characterize false positives and false negatives | BLOCKED | Methods, corpus, results, and limitations. |
 | Review PCAP parser limits and privacy handling | BLOCKED | Security and data-handling report. |
 | Review extension provenance, isolation, and resource controls | BLOCKED | Extension security assessment. |
@@ -72,7 +78,7 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 | Align all public claims with candidate evidence | BLOCKED | Claims-to-evidence matrix. |
 | Build source, package, image, and documentation artifacts reproducibly where approved | BLOCKED | Retained artifacts and logs. |
 | Sign provenance and record approval chain | BLOCKED | Signature and attestation bundle. |
-| Verify deployment, migration, retirement, and rollback procedures | BLOCKED | Staged drills and results. |
+| Verify deployment, migration, consolidation, retirement, and rollback procedures | BLOCKED | Staged drills and results. |
 | Approve Pages, package, image, or service publication targets | BLOCKED | Explicit publication decision. |
 | Record support, vulnerability response, withdrawal, correction, revocation, and deprecation policies | BLOCKED | Operational ownership documents. |
 | Mark `release.md` ready only after every blocking gate passes | BLOCKED | Architect and independent reviewer approval. |
@@ -88,8 +94,10 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 - [ ] Proposed schemas and controls are labeled as proposals.
 - [ ] Sensitive-data and authorization warnings are prominent.
 - [ ] `taskchain.md`, `release.md`, `punchlist.md`, and `changelog.md` describe the same current posture.
-- [ ] Migration and retirement remain available outcomes.
+- [ ] Migration, consolidation, and retirement remain available outcomes.
 - [ ] Repository `0` / Repository `1` roles remain proposals until approved.
+- [ ] JusticeForMe and PhantomBlock overlap is explicit rather than silently duplicated.
+- [ ] Duplicate evidence cannot be counted as independent corroboration without a witness.
 - [ ] Observation cannot self-authorize response.
 
 ## Evidence log
@@ -98,3 +106,4 @@ Add dated entries only when evidence is retained and tied to an immutable commit
 
 - 2026-07-19 — Documentation milestone prepared on a feature branch: expanded repository overview; revised Pages landing and architecture; added repository boundaries, design contracts, developer onboarding, ownership/release guidance, contribution rules, and this punch list. Validation and architectural gates remain blocked pending review and retained build evidence.
 - 2026-07-20 — Added an obstruction and gluing ledger with eighteen active incompatibilities, a proposed bounded Repository `0` adapter role, Repository `1` authority boundary, evidence-envelope proposal, and required pairwise and triple-overlap witnesses. No implementation or authority changed.
+- 2026-07-20 — Added portable host-observation and JusticeForMe overlap guides, updated Pages navigation, and introduced shared field, deduplication, conflict, privacy, and compatibility gates without changing runtime or release scope.
