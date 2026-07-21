@@ -2,12 +2,13 @@
 
 ## Decision required
 
-XYZ / PhantomBlock cannot become release-ready while it remains inside `Misc`. The next architectural decision is binary:
+XYZ / PhantomBlock cannot become release-ready while it remains an indefinitely owned production component inside `Misc`. The next architectural decision has three bounded outcomes:
 
-1. **Promote and migrate** the prototype into a dedicated repository with an approved charter; or
-2. **Retire and archive** it while preserving source history, evidence, limitations, and the reason for disposition.
+1. **Promote and migrate** the prototype into a dedicated repository with an approved charter;
+2. **Consolidate compatible modules into JusticeForMe** or another explicitly approved host-observation owner, with field mappings, provenance, compatibility fixtures, and retirement of duplicate authority; or
+3. **Retire and archive** the prototype while preserving source history, evidence, limitations, and the reason for disposition.
 
-No third path should allow `Misc` to become the permanent production owner by default.
+No fourth path should allow `Misc` to become the permanent production owner by default. Consolidation is not an informal code copy: it requires an approved owner, an explicit source-to-target manifest, conflict and deduplication semantics, compatibility evidence, and a rollback or restoration plan.
 
 ## Why ownership precedes release
 
@@ -23,30 +24,38 @@ A privileged defensive assessment tool needs durable answers to questions that a
 - Which organization may sign, publish, deploy, withdraw, or deprecate artifacts?
 - What evidence is required before capability claims are allowed?
 
-Without a dedicated owner, release controls would be ambiguous even if the code compiled and tests passed.
+Without a dedicated or explicitly consolidated owner, release controls would be ambiguous even if the code compiled and tests passed.
 
-## Promotion path
+## Disposition paths
 
 ```mermaid
 flowchart TD
     A[Preserved prototype in Misc] --> B{Architect decision}
-    B -->|Retain| C[Approve dedicated repository charter]
-    B -->|Retire| D[Archive with provenance and limitations]
-    C --> E[Preserve and migrate full history]
-    E --> F[Reconcile naming, license, and boundaries]
-    F --> G[Establish immutable validation candidate]
-    G --> H[Run security, platform, adversarial, build, and rollback gates]
-    H --> I{All gates pass?}
-    I -->|No| J[Record failure and repair or retire]
-    I -->|Yes| K[Explicit publication and release approval]
+    B -->|Dedicated owner| C[Approve dedicated repository charter]
+    B -->|Consolidate| D[Approve JusticeForMe or another target owner]
+    B -->|Retire| E[Archive with provenance and limitations]
+    C --> F[Preserve and migrate full history]
+    D --> G[Create source-to-target manifest and field mappings]
+    G --> H[Run duplicate, conflict, partial, stale, replay, and wrong-device fixtures]
+    H --> I[Retire duplicate package and authority surfaces]
+    F --> J[Reconcile naming, license, and boundaries]
+    I --> J
+    J --> K[Establish immutable validation candidate]
+    K --> L[Run security, platform, adversarial, build, and rollback gates]
+    L --> M{All gates pass?}
+    M -->|No| N[Record failure and repair, restore, or retire]
+    M -->|Yes| O[Explicit publication and release approval]
 ```
 
-## Required promotion record
+**Diagram alternative:** The preserved prototype may be promoted into a dedicated repository, consolidated into an approved owner such as JusticeForMe, or retired. Dedicated promotion preserves and migrates history. Consolidation additionally requires a source-to-target manifest, semantic field mappings, duplicate and conflict fixtures, and retirement of duplicate package or authority surfaces. Both active paths then pass naming, licensing, security, validation, build, rollback, and explicit approval gates. Failure is preserved and leads to repair, restoration, or retirement rather than implicit release.
 
-The promotion decision should identify:
+## Required disposition record
+
+The architectural decision should identify:
 
 | Area | Required decision |
 |---|---|
+| Disposition | Dedicated promotion, approved modular consolidation, or evidence-preserving retirement. |
 | Canonical identity | Repository name, package name, CLI name, product name, and version lineage. |
 | Ownership | Maintainer, security contact, release authority, publication authority, and support boundary. |
 | Intended users | Authorized laboratories, researchers, operators, or other explicitly defined groups. |
@@ -59,6 +68,29 @@ The promotion decision should identify:
 | Validation | Positive, negative, adversarial, malformed, unsupported, performance, and rollback fixtures. |
 | Release | Candidate process, CI, artifacts, SBOM, checksums, signatures, provenance, approvals, and withdrawal. |
 | Migration | Commit-history preservation, open issues, known defects, compatibility policy, and redirect/archive plan. |
+| Consolidation | Target owner, imported modules, rejected modules, field mappings, provenance links, duplicate/conflict rules, compatibility window, source retirement, and restoration path. |
+
+## Dedicated promotion path
+
+Dedicated promotion is appropriate only when PhantomBlock has a distinct durable role that cannot be represented cleanly as a module or profile beneath another approved host-observation owner. The new repository must receive the full provenance and release controls listed below; moving code alone does not establish ownership or authority.
+
+## Consolidation path
+
+Consolidation is appropriate when JusticeForMe or another approved project can own the useful observation capability without preserving a second package, schema, release, or authority surface.
+
+The consolidation record must:
+
+- pin the exact source and target commits;
+- list every imported, translated, rejected, and retired module;
+- preserve original authorship, license, issues, limitations, and validation evidence;
+- map device identity, check identity, result state, completion state, evidence references, timestamps, freshness, privacy, and artifact digests into the target contract;
+- define duplicate and conflict handling when both collectors observe the same host property;
+- preserve `UNKNOWN`, unsupported, partial, stale, and unverifiable states rather than converting them into success;
+- prove wrong-device, wrong-environment, replay, stale, partial-collection, duplicate, conflicting-observation, correction, revocation, and rollback behavior;
+- retire or archive duplicate package, CLI, schema, Pages, release, and authority claims after the compatibility window;
+- provide a tested restoration path if the consolidation loses required evidence or behavior.
+
+Consolidation does not allow JusticeForMe, PhantomBlock, Repository `0`, or Repository `1` to self-approve the shared contract or operational authority.
 
 ## Release evidence model
 
@@ -80,13 +112,13 @@ flowchart LR
     P -->|Rejected| Y[Preserve evidence and block release]
 ```
 
-A workflow definition, package version, MkDocs site, or prior successful test run is not a release candidate by itself.
+A workflow definition, package version, MkDocs site, prior successful test run, or successful consolidation fixture is not a release candidate by itself.
 
-## Promotion gates
+## Promotion or consolidation gates
 
-The following gates remain blocking until evidence is recorded in the dedicated repository:
+The following gates remain blocking until evidence is recorded in the approved owner repository:
 
-- approved charter and ownership;
+- approved charter, disposition, and ownership;
 - intended-user and authorized-use policy;
 - license and third-party rights;
 - repository overlap disposition;
@@ -98,13 +130,15 @@ The following gates remain blocking until evidence is recorded in the dedicated 
 - parser and extension security review;
 - credential, privilege, network, dashboard, and data protections;
 - isolation rollback verification if active response is retained;
+- source-to-target manifest and semantic compatibility fixtures for consolidation;
+- explicit duplicate, conflict, correction, revocation, and stale-evidence handling;
 - SBOM, checksums, vulnerability review, and signed provenance;
 - publication, support, incident-response, withdrawal, and deprecation plans;
 - explicit release approval.
 
 ## Retirement path
 
-Retirement is a valid architectural outcome when overlap, risk, licensing, unsupported claims, maintenance cost, or lack of a qualified owner outweighs the prototype's value.
+Retirement is a valid architectural outcome when overlap, risk, licensing, unsupported claims, maintenance cost, failed consolidation, or lack of a qualified owner outweighs the prototype's value.
 
 A retirement record should preserve:
 
@@ -121,11 +155,11 @@ A retirement record should preserve:
 
 ## Current posture
 
-Until promotion or retirement is approved:
+Until dedicated promotion, approved modular consolidation, or retirement is approved:
 
 - `Misc` remains the canonical location only for preserved incubation evidence;
 - XYZ remains unreleased;
 - package version `0.3.0` remains prototype metadata;
 - GitHub Pages remains manual-only and fail-closed;
 - feature, packaging, deployment, and operational expansion remain frozen;
-- documentation may clarify boundaries, evidence, reproduction, and decision requirements.
+- documentation may clarify boundaries, evidence, reproduction, consolidation, and decision requirements.
