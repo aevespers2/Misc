@@ -45,6 +45,7 @@ All notable product, architecture, implementation, release, and deployment chang
 ### Validation
 
 - 2026-07-23 — Added deterministic documentation-structure, internal-link, planning-alignment, diagram-alternative, authority-boundary, and workflow-permission checks with hostile regressions.
+- 2026-07-23 — Extended the documentation workflow to validate exact `main` heads after relevant merges, while preserving read-only permissions, pinned Actions, non-persistent credentials, retained evidence, and the manual-only Pages boundary.
 - Documentation validation establishes structural consistency only; it does not validate detection, hardware support, security, release, publication, or operational capability.
 
 ### Release
