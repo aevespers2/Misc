@@ -1,5 +1,5 @@
-site_name: XYZ
-site_description: Defensive firmware, hardware integrity, and out-of-band assessment platform
+site_name: XYZ / PhantomBlock
+site_description: Preserved defensive firmware-assessment prototype in portfolio incubation
 repo_url: https://github.com/aevespers2/Misc
 repo_name: aevespers2/Misc
 docs_dir: docs
@@ -14,14 +14,21 @@ theme:
     - search.suggest
 
 nav:
-  - Overview: index.md
-  - Why XYZ Exists: purpose.md
-  - Architecture: architecture.md
-  - Threat Model: threat-model.md
-  - Deployment: deployment.md
-  - Extensions: extensions.md
-  - Validation Roadmap: validation.md
-  - Compliance Center: compliance.md
+  - Start Here:
+      - Overview: index.md
+      - Incubation Status: incubation-status.md
+      - Safe Onboarding: onboarding.md
+  - Design:
+      - Why XYZ Exists: purpose.md
+      - Architecture and Trust Boundaries: architecture.md
+      - Threat Model: threat-model.md
+      - Extensions: extensions.md
+  - Development and Evidence:
+      - Developer Guide: developer-guide.md
+      - Validation Roadmap: validation.md
+      - Compliance Center: compliance.md
+  - Controlled Operations:
+      - Deployment Boundary: deployment.md
 
 markdown_extensions:
   - admonition
