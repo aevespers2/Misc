@@ -13,6 +13,7 @@ All notable product, architecture, implementation, documentation, release, and d
 - 2026-07-16 — Preserved XYZ as unaccepted prototype evidence and changed the immediate local objective to containment, ownership review, and either migration to a dedicated repository or retirement. Portfolio priority remains P4.
 - 2026-07-20 — Proposed the lowest-overlap retained role as a specialist host-firmware, kernel, management-plane, and offline-PCAP observation adapter beneath Repository `0`, with Repository `1` retaining device-baseline, capability, revocation, canonical-receipt, and recovery authority. This is not an approved product or integration decision.
 - 2026-07-20 — Added three explicit disposition options: dedicated PhantomBlock adapter, approved modular consolidation with JusticeForMe, or evidence-preserving retirement/archive.
+- 2026-07-24 — Added explicit `REMAIN_IN_INCUBATION` as a fail-closed fourth disposition when no owner, destination, consolidation, or retirement decision is approved.
 
 ### Architecture
 
@@ -29,15 +30,17 @@ All notable product, architecture, implementation, documentation, release, and d
 - 2026-07-20 — Added a proposed host-observation envelope minimum without changing current package output or claiming a trusted signing system.
 - 2026-07-20 — Added a portable first-install mapping that keeps PhantomBlock below Repository `0` and preserves Repository `1` as the candidate authority for device identity, baselines, capabilities, revocations, receipts, checkpoints, and recovery.
 - 2026-07-20 — Added a JusticeForMe overlap analysis proposing separate collector domains, one canonical host-observation envelope, deterministic duplicate/conflict handling, shared privacy rules, and retained compatibility fixtures.
+- 2026-07-24 — Added a component-level incubation exit model requiring explicit disposition, semantic and interface ownership, source-to-target provenance, duplicate-authority retirement, contract-gluing review, rollback, and independently reviewable restored-state evidence.
 
 ### Implementation
 
 - Added package metadata for `xyz-firmware-defense` version `0.3.0`, with Python 3.11+ dependencies and `xyz` / `phantomblock` console entry points.
 - Added source, unit tests, CI configuration, binary/SBOM and read-only image build scripts, example trusted-baseline configuration, and documentation assets.
 - Added a GitHub Pages workflow that can publish documentation using `pages: write` and `id-token: write` permissions.
-- No retained workflow status or exact-commit validation evidence was found for the reviewed release-planning head; configured workflows are not equivalent to passing release evidence.
+- Earlier release-planning generations lacked current exact-head evidence; predecessor documentation head `5e4229641faac822868673127d305554a269d28a` later passed PhantomBlock CI run `29859387473`. That evidence applies only to that immutable generation.
 - 2026-07-19 — No runtime, collector, heuristic, package, API, deployment, credential, networking, or target-mutation behavior changed in the documentation milestone.
 - 2026-07-20 — No runtime, evidence schema, collector, adapter, credential, capability, remediation, publication, or deployment behavior changed in the gluing-analysis or overlap milestones.
+- 2026-07-24 — No runtime, collector, parser, package, CLI, API, dashboard, extension, adapter, workflow-permission, credential, networking, response, publication, or deployment behavior changed in the incubation-exit milestone.
 
 ### Documentation
 
@@ -51,6 +54,8 @@ All notable product, architecture, implementation, documentation, release, and d
 - 2026-07-20 — Added `phantomblock/docs/obstruction-and-gluing.md` and linked it from the root README and MkDocs navigation.
 - 2026-07-20 — Added `phantomblock/docs/portable-host-observation.md` and `phantomblock/docs/host-observation-overlap.md` and linked both from the README and Pages navigation.
 - 2026-07-20 — Expanded `taskchain.md`, `punchlist.md`, and `release.md` with device-trust, JusticeForMe overlap, canonical-field, deduplication, conflict, gluing-fixture, incident, privacy, temporal, migration, consolidation, retirement, and rollback gates.
+- 2026-07-24 — Added `phantomblock/docs/incubation-exit-and-migration.md` with an accessible Mermaid diagram and prose equivalent, four controlled dispositions, a non-executable manifest template, component and contract ledgers, source-history preservation, consolidation and retirement controls, validation, fail-closed conditions, reviewer onboarding, and FYSA-120 mapping.
+- 2026-07-24 — Synchronized the README, Pages landing page and navigation, `taskchain.md`, `punchlist.md`, `release.md`, and changelog around `INCUBATION_EXIT_DOCUMENTED_DISPOSITION_UNAPPROVED`.
 
 ### Security and compliance
 
@@ -61,14 +66,16 @@ All notable product, architecture, implementation, documentation, release, and d
 - 2026-07-20 — Clarified that observation cannot self-authorize response; Repository `0` proposal preparation and Repository `1` capability authority remain distinct and unapproved.
 - 2026-07-20 — Added fail-closed requirements for device identity, baseline provenance, freshness, replay, artifact binding, privacy classification, temporal ordering, corrections, revocations, and incident recovery.
 - 2026-07-20 — Clarified that duplicate observations from JusticeForMe and PhantomBlock are not independent corroboration unless source independence is demonstrated.
+- 2026-07-24 — Added fail-closed exit conditions for incomplete component dispositions, unclear source or target generations, vacant authority owners, lossy transformations, unpropagated corrections or revocations, sensitive-data handling gaps, unauthorized infrastructure or credential operations, duplicate authority surfaces, and unverifiable restoration.
 
 ### Release
 
 - No package, image, service, deployment, certification, portfolio integration, or production capability is approved from the current prototype.
-- The first eligible decision is not a release: the Architect must approve a dedicated adapter, approved JusticeForMe consolidation, or retirement/archive.
-- Release remains blocked on ownership, product and schema identity, host-observation overlap, gluing contracts, license, threat model, trusted-baseline provenance, representative and adversarial validation, reproducible CI, SBOM/checksums, security review, rollback, and explicit approval.
+- The first eligible decision is not a release: the Architect must approve dedicated migration, approved JusticeForMe consolidation, evidence-preserving retirement, or explicit continued incubation.
+- Release remains blocked on ownership, product and schema identity, host-observation overlap, gluing contracts, exit manifest and history map, license, threat model, trusted-baseline provenance, representative and adversarial validation, reproducible CI, SBOM/checksums, security review, rollback, restoration, and explicit approval.
 - 2026-07-19 — Classified the documentation foundation and repository punch list as partial review evidence; strict documentation build, accessibility/link review, and independent approval remain required.
 - 2026-07-20 — Classified the obstruction/gluing and host-observation overlap guides as architectural review evidence only; they do not authorize migration, consolidation, integration, release, or deployment.
+- 2026-07-24 — Classified the exit playbook as `DOCUMENTED_NOT_APPROVED`; it defines evidence and governance requirements but does not approve a destination, archive, release, publication, or operational authority.
 
 ### Deployment
 
@@ -76,6 +83,7 @@ All notable product, architecture, implementation, documentation, release, and d
 - No operational scanner, live image, dashboard, switch isolation adapter, host-observation integration, or external service is authorized for deployment.
 - 2026-07-19 — Documentation changes did not alter the fail-closed Pages workflow or authorize a deployment.
 - 2026-07-20 — Gluing and overlap documentation did not alter workflow authority, network access, credentials, or deployment posture.
+- 2026-07-24 — Exit-governance documentation did not move source, change repository settings, publish Pages, rotate credentials, deploy services, apply infrastructure, or authorize active response.
 
 ## Entry format
 

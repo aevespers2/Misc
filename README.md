@@ -10,6 +10,7 @@ The repository currently contains the **XYZ / PhantomBlock defensive firmware-as
 - Release status: **blocked** pending ownership, licensing, validation, security, publication, provenance, and approval decisions.
 - GitHub Pages publication: manual-only and fail-closed unless `release.md` is explicitly marked `READY`.
 - Implementation scope: frozen except for evidence-preserving corrections or work explicitly approved after architectural review.
+- Incubation exit status: `INCUBATION_EXIT_DOCUMENTED_DISPOSITION_UNAPPROVED`.
 
 See [`taskchain.md`](taskchain.md), [`release.md`](release.md), [`punchlist.md`](punchlist.md), and [`changelog.md`](changelog.md) for the authoritative planning and release posture.
 
@@ -18,8 +19,9 @@ See [`taskchain.md`](taskchain.md), [`release.md`](release.md), [`punchlist.md`]
 `Misc` exists to make experimental work reviewable without allowing an experiment to acquire production authority by accumulation. Each proposal must be classified, bounded, assigned an owner, and either:
 
 1. promoted into a dedicated repository with an approved charter;
-2. retained temporarily as bounded evidence; or
-3. retired or archived with provenance and limitations preserved.
+2. consolidated as an approved module under a named owner;
+3. retained temporarily as bounded evidence; or
+4. retired or archived with provenance and limitations preserved.
 
 `Misc` is not intended to become the permanent home of production packages, deployment workflows, credentials, customer data, firmware images, sensitive findings, or privileged operational tooling.
 
@@ -67,6 +69,7 @@ Key guides:
 - [Portable host-observation role](phantomblock/docs/portable-host-observation.md)
 - [JusticeForMe and PhantomBlock overlap](phantomblock/docs/host-observation-overlap.md)
 - [Obstruction and gluing analysis](phantomblock/docs/obstruction-and-gluing.md)
+- [Incubation exit and migration playbook](phantomblock/docs/incubation-exit-and-migration.md)
 - [Architecture](phantomblock/docs/architecture.md)
 - [Design contracts](phantomblock/docs/design-contracts.md)
 - [Developer onboarding](phantomblock/docs/developer-onboarding.md)
@@ -100,8 +103,11 @@ Before contributing, read [`CONTRIBUTING.md`](CONTRIBUTING.md). Documentation, e
 The next substantive decision is to either:
 
 - migrate XYZ and its history into a dedicated, approved security-adapter repository with a charter, owner, license, authorized-use policy, device and evidence contracts, validation plan, and release controls;
-- merge the approved observation subset with JusticeForMe under one shared contract and preserved histories; or
-- retire/archive the prototype while preserving source history, evidence, limitations, and the reason for disposition.
+- consolidate the approved observation subset with JusticeForMe under one shared contract and preserved histories;
+- retire/archive the prototype while preserving source history, evidence, limitations, and the reason for disposition; or
+- explicitly retain it frozen in incubation while recording the unresolved blockers.
+
+The [incubation exit and migration playbook](phantomblock/docs/incubation-exit-and-migration.md) defines the component ledger, source-to-target manifest, history preservation, gluing review, rollback, and independent evidence required for any of those outcomes. It does not select or authorize one.
 
 If migration or consolidation is selected, the Architect must also approve the Repository `0` and Repository `1` gluing contracts for device identity, baseline identity, evidence envelopes, canonical fields, deduplication, conflict resolution, capabilities, receipts, revocations, temporal semantics, privacy, incident handling, and rollback.
 

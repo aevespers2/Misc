@@ -18,24 +18,26 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 | Add JusticeForMe overlap decision guide | IN REVIEW | `host-observation-overlap.md` defines candidate domains, shared envelope, deduplication, conflict resolution, fixtures, and migration options. |
 | Add obstruction and gluing analysis | IN REVIEW | `obstruction-and-gluing.md` records identity, authority, evidence, privacy, temporal, incident, and rollback incompatibilities plus pairwise and triple-overlap witnesses. |
 | Add bounded developer onboarding and contribution guidance | IN REVIEW | `developer-onboarding.md` and `CONTRIBUTING.md` pass documentation review. |
-| Add ownership, promotion, consolidation, retirement, release, and rollback decision path | IN REVIEW | `ownership-and-release.md` and overlap guides reviewed by Architect. |
-| Build Pages documentation with strict link and navigation checks | OPEN | Retained `mkdocs build --strict` result tied to the exact PR head. |
-| Verify documentation accessibility basics | OPEN | Heading order, link labels, tables, contrast/theme defaults, keyboard navigation, and diagram alternatives reviewed. |
+| Add ownership, promotion, consolidation, retirement, release, and rollback decision path | IN REVIEW | `ownership-and-release.md`, overlap guides, and exit playbook reviewed by Architect. |
+| Add incubation exit and migration playbook | IN REVIEW | `incubation-exit-and-migration.md` defines four dispositions, component ledger, source-to-target manifest, history preservation, gluing review, rollback, restoration, and fail-closed stop conditions without granting authority. |
+| Build Pages documentation with strict link and navigation checks | IN REVIEW | Predecessor head `5e4229641faac822868673127d305554a269d28a` passed PhantomBlock CI run `29859387473`; every changed descendant requires its own exact-head validation. |
+| Verify documentation accessibility basics | OPEN | Heading order, link labels, tables, contrast/theme defaults, keyboard navigation, and diagram prose equivalents reviewed against the exact rendered artifact. |
 
 ## P1 — ownership and product definition
 
 | Item | Status | Acceptance evidence |
 |---|---|---|
-| Select dedicated owning repository, approved consolidation, or retirement | BLOCKED | Architect decision record. |
+| Select dedicated owning repository, approved consolidation, explicit continued incubation, or retirement | BLOCKED | Architect decision record. |
 | Approve or reject the proposed Repository `0` specialist observation-adapter role | BLOCKED | Portfolio architecture decision. |
-| Resolve JusticeForMe overlap through separate-adapter, merge, or retirement decision | BLOCKED | Approved host-observation ownership record. |
+| Resolve JusticeForMe overlap through separate-adapter, merge, continued-incubation, or retirement decision | BLOCKED | Approved host-observation ownership record. |
 | Approve canonical product, repository, package, CLI, schema, field, and version identities | BLOCKED | Charter and migration/consolidation record. |
 | Identify maintainer, security contact, release authority, publication authority, incident owner, and revoker | BLOCKED | Ownership record. |
 | Define intended users and authorized-use policy | BLOCKED | Approved product directive. |
 | Define supported and unsupported platforms | BLOCKED | Platform and privilege matrix with `UNKNOWN` behavior. |
 | Resolve overlap with Repository `0`, Repository `1`, JusticeForMe, Bridge, AionUi, QSO-STUDIO, verification, security, and portfolio Pages repositories | BLOCKED | Repository-boundary and gluing decision. |
 | Select license and approve dependency, data, firmware, PCAP, and documentation rights | BLOCKED | License and provenance review. |
-| Preserve full histories during migration, consolidation, or archive | BLOCKED | Verified procedure and commit mapping. |
+| Preserve full histories during migration, consolidation, or archive | BLOCKED | Verified source-to-target commit map, archive identity, and restoration procedure. |
+| Classify every component and authority surface | BLOCKED | Complete component ledger with `MOVE`, `TRANSFORM`, `DEPRECATE`, `RETIRE`, or `REJECT` disposition and named owners or explicit vacancies. |
 
 ## P1-G — cross-repository gluing
 
@@ -53,6 +55,7 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 | Define Bridge transport and interface-display boundaries | BLOCKED | Round-trip integrity, minimization, revocation, and non-actionable UI fixtures. |
 | Define incident freeze, evidence preservation, lost-device recovery, and bounded restart | BLOCKED | Portfolio state machine and tabletop evidence. |
 | Validate pairwise and triple-overlap witnesses | BLOCKED | Immutable fixture suite proving meaning remains consistent across all documented paths. |
+| Prove correction, revocation, and withdrawal propagation after exit | BLOCKED | Every affected consumer acknowledges the updated state at one exact resulting generation. |
 
 ## P2 — security and validation candidate
 
@@ -70,6 +73,7 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 | Review dashboard authentication, exposure, retention, and tenancy boundary | BLOCKED | Approved deployment design or explicit local-only restriction. |
 | Verify dry-run response and any approved active-response rollback | BLOCKED | Idempotency, audit, capability, rollback, and partial-failure evidence. |
 | Complete threat model and incident/disclosure plan | BLOCKED | Independent review and closure record. |
+| Verify migration or retirement restoration | BLOCKED | Prior state is restored or independently reconstructable and the restored exact head passes required checks. |
 
 ## P3 — release and publication
 
@@ -88,17 +92,20 @@ Statuses: `OPEN` · `IN REVIEW` · `BLOCKED` · `DONE` · `NOT APPLICABLE`
 - [ ] All Pages navigation targets exist.
 - [ ] `mkdocs build --strict` passes at the exact PR head.
 - [ ] Root README links resolve.
-- [ ] Mermaid diagrams render or have meaningful surrounding text.
+- [ ] Mermaid diagrams render and have meaningful prose equivalents.
 - [ ] No page claims certification, authorization, release, or comprehensive detection.
 - [ ] Current commands and package metadata match source.
 - [ ] Proposed schemas and controls are labeled as proposals.
 - [ ] Sensitive-data and authorization warnings are prominent.
 - [ ] `taskchain.md`, `release.md`, `punchlist.md`, and `changelog.md` describe the same current posture.
-- [ ] Migration, consolidation, and retirement remain available outcomes.
+- [ ] Migration, consolidation, continued incubation, and retirement remain available outcomes.
 - [ ] Repository `0` / Repository `1` roles remain proposals until approved.
 - [ ] JusticeForMe and PhantomBlock overlap is explicit rather than silently duplicated.
 - [ ] Duplicate evidence cannot be counted as independent corroboration without a witness.
 - [ ] Observation cannot self-authorize response.
+- [ ] Every exit component receives a disposition and source-to-target provenance record.
+- [ ] Historical exact-head evidence is not presented as validation of a changed descendant.
+- [ ] Rollback and restored-state verification remain required.
 
 ## Evidence log
 
@@ -107,3 +114,5 @@ Add dated entries only when evidence is retained and tied to an immutable commit
 - 2026-07-19 — Documentation milestone prepared on a feature branch: expanded repository overview; revised Pages landing and architecture; added repository boundaries, design contracts, developer onboarding, ownership/release guidance, contribution rules, and this punch list. Validation and architectural gates remain blocked pending review and retained build evidence.
 - 2026-07-20 — Added an obstruction and gluing ledger with eighteen active incompatibilities, a proposed bounded Repository `0` adapter role, Repository `1` authority boundary, evidence-envelope proposal, and required pairwise and triple-overlap witnesses. No implementation or authority changed.
 - 2026-07-20 — Added portable host-observation and JusticeForMe overlap guides, updated Pages navigation, and introduced shared field, deduplication, conflict, privacy, and compatibility gates without changing runtime or release scope.
+- 2026-07-22 — Predecessor documentation head `5e4229641faac822868673127d305554a269d28a` passed PhantomBlock CI run `29859387473` with retained artifact `8506640400`; that evidence remains exact-generation evidence only.
+- 2026-07-24 — Added the incubation exit and migration playbook and synchronized documentation, planning, release, provenance, rollback, and skill-map requirements without selecting or authorizing a disposition.
