@@ -4,7 +4,9 @@
 
 XYZ is an **implemented but unaccepted defensive research prototype** preserved inside the `Misc` incubation repository. The source tree contains collection, reporting, extension, packaging, test, and documentation artifacts; those artifacts do not by themselves establish a supported product, validated detector, release candidate, certification, deployment authorization, or permission to assess systems.
 
-The authoritative repository posture is defined by the root-level records `taskchain.md`, `release.md`, and `changelog.md`. Those files intentionally remain outside the MkDocs `docs_dir`; review them directly in the repository before changing this prototype. Where older prototype language sounds more mature than the retained evidence, those planning records control.
+The authoritative repository posture is defined by the root-level records `taskchain.md`, `release.md`, `punchlist.md`, and `changelog.md`. Those files intentionally remain outside the MkDocs `docs_dir`; review them directly in the repository before changing this prototype. Where older prototype language sounds more mature than the retained evidence, those planning records control.
+
+Current incubation-exit status: `INCUBATION_EXIT_DOCUMENTED_DISPOSITION_UNAPPROVED`.
 
 !!! warning "Release and publication are blocked"
     Ownership, product definition, licensing, trusted-baseline governance, representative validation, security review, provenance, rollback, publication, and explicit approval remain unresolved. The Pages workflow is manual-only and fails closed unless `release.md` is explicitly marked `READY`.
@@ -67,14 +69,16 @@ The diagram describes the intended separation of responsibilities. It does not a
 |---|---|---|
 | Implemented | Source or configuration exists in the repository. | CLI, collectors, PCAP inspection, dashboard, extension registry, dry-run adapter. |
 | Configured | A workflow or build path is described but may not have accepted run evidence. | CI, live-image definition, standalone build, SBOM generation, Pages workflow. |
-| Locally tested | A retained run demonstrates a bounded behavior at one commit. | One prior merged-PR lint/test run documented in `release.md`. |
+| Exact-generation evidence | A retained run demonstrates bounded behavior at one immutable commit only. | PhantomBlock CI evidence recorded in `release.md` and the active pull request. |
 | Proposed | Documentation describes a future or conditional capability. | Signed evidence bundles, production adapters, broad hardware support, formal authorization exports. |
-| Accepted evidence | Independently reviewed results tied to an immutable candidate. | None sufficient for release at present. |
+| Accepted evidence | Independently reviewed results tied to an immutable approved candidate. | None sufficient for release at present. |
 
 ## Safe documentation path
 
 - Start with [Repository boundaries](repository-boundaries.md).
 - Review [Architecture](architecture.md) and [Design contracts](design-contracts.md).
+- Read the [Portable host-observation role](portable-host-observation.md), [JusticeForMe overlap](host-observation-overlap.md), and [Obstruction and gluing analysis](obstruction-and-gluing.md).
+- Use the [Incubation exit and migration playbook](incubation-exit-and-migration.md) to review dedicated migration, modular consolidation, retirement, or continued-incubation options without granting authority.
 - Use [Developer onboarding](developer-onboarding.md) for passive local setup.
 - Read [Threat model](threat-model.md) before handling firmware, PCAPs, extensions, credentials, or privileged interfaces.
 - Consult [Validation roadmap](validation.md) for the evidence required before claims can mature.
@@ -86,4 +90,4 @@ The prototype is not an offensive framework, credential-bypass mechanism, firmwa
 
 ## Current decision boundary
 
-No additional capability, package promotion, public deployment, or operational claim should proceed in `Misc`. The next decision is architectural: assign XYZ to a dedicated approved owner and migrate it with history, or retire/archive it with limitations and provenance preserved.
+No additional capability, package promotion, public deployment, or operational claim should proceed in `Misc`. The next decision is architectural: migrate the approved subset into a dedicated owner, consolidate an approved module with JusticeForMe, retire/archive the prototype with evidence preserved, or explicitly retain it frozen in incubation. The exit playbook defines the required manifest, source-history map, contract review, validation, rollback, and restoration evidence; it does not select a disposition.
