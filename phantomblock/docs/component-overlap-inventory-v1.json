@@ -5,8 +5,11 @@
   "scope": {
     "repository": "aevespers2/Misc",
     "prototype_root": "phantomblock/",
-    "reviewed_source": "f50312aaf0a219b1f84de0972cfa42ed5c5cbb36",
-    "complete_file_hash_manifest": false
+    "reviewed_source": "68703e138ffa1df26924dd4e018078a246531ace",
+    "complete_file_hash_manifest": true,
+    "file_manifest_status": "FILE_DISPOSITION_MANIFEST_COMPLETE_FOR_FROZEN_SOURCE_DECISION_UNAPPROVED",
+    "file_manifest": "phantomblock/docs/file-disposition-manifest-v1.json",
+    "successor_rebind_required": true
   },
   "components": [
     {"id":"C01","surface":"phantomblock/pyproject.toml","role":"package metadata, dependencies, console and extension entry points","evidence_class":"IMPLEMENTED_METADATA","authority":"NONE","disposition":"UNSELECTED"},
@@ -52,23 +55,31 @@
     "ROLLBACK_RESURRECTION",
     "SELF_ATTESTED_RESTORATION"
   ],
-  "next_required_artifact": {
+  "completed_bounded_artifact": {
     "name": "exact file-level path and hash manifest",
+    "status": "FILE_DISPOSITION_MANIFEST_COMPLETE_FOR_FROZEN_SOURCE_DECISION_UNAPPROVED",
+    "frozen_source": "68703e138ffa1df26924dd4e018078a246531ace",
+    "recorded_paths": 42,
+    "manifest": "phantomblock/docs/file-disposition-manifest-v1.json",
+    "authority_effect": "NONE"
+  },
+  "next_required_decision": {
+    "name": "Architect disposition and approved successor-bound mapping",
     "required_fields": [
-      "path",
-      "blob_or_content_digest",
-      "component_id",
-      "evidence_class",
-      "sensitive_data_classification",
-      "source_commit",
-      "proposed_disposition",
-      "target_or_archive_path",
-      "semantic_owner_or_vacancy",
+      "selected_disposition",
+      "destination_or_archive",
+      "semantic_and_interface_owners",
+      "source_to_target_path_and_commit_map",
+      "license_and_rights",
       "known_losses",
-      "correction_route",
-      "rollback_treatment"
+      "correction_and_revocation_closure",
+      "rollback_owner",
+      "independent_restoration_witness"
     ]
   },
   "skill_map": ["011-B","011-E","012-A","012-B","012-D","012-E","013-A","013-C","013-D","013-E","017-C","017-D","017-E","018-B","018-D","018-E","019-B","019-C","019-D","031-A","031-D","031-E","032-A","032-D","032-E","040-A","040-B","040-D","040-E"],
-  "proposed_skill_subdivision": "013-M Incubated component-family inventories, cross-repository overlap ledgers, and disposition-safe ownership graphs"
+  "proposed_skill_subdivisions": [
+    "013-M Incubated component-family inventories, cross-repository overlap ledgers, and disposition-safe ownership graphs",
+    "017-F Exact-generation file disposition manifests, blob-bound provenance, and successor rebinding"
+  ]
 }

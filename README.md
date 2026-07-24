@@ -11,6 +11,8 @@ The current contents include the **XYZ / PhantomBlock defensive firmware-assessm
 - [Architecture and trust boundaries](phantomblock/docs/architecture.md)
 - [Component and portfolio overlap inventory](phantomblock/docs/component-overlap-inventory.md)
 - [Machine-readable component and overlap inventory](phantomblock/docs/component-overlap-inventory-v1.json)
+- [Exact file-level evidence and disposition manifest](phantomblock/docs/file-disposition-manifest.md)
+- [Machine-readable file disposition manifest](phantomblock/docs/file-disposition-manifest-v1.json)
 - [Incubation exit and migration playbook](phantomblock/docs/incubation-exit-and-migration.md)
 - [Safe onboarding](phantomblock/docs/onboarding.md)
 - [Developer guide](phantomblock/docs/developer-guide.md)
@@ -30,6 +32,8 @@ The current contents include the **XYZ / PhantomBlock defensive firmware-assessm
 | Ownership | Unresolved; dedicated migration, modular consolidation, evidence-preserving retirement, or continued hold decision required |
 | Incubation exit | `INCUBATION_EXIT_DOCUMENTED_DISPOSITION_UNAPPROVED` |
 | Component overlap | `COMPONENT_OVERLAP_INVENTORY_DOCUMENTED_DISPOSITION_UNAPPROVED` |
+| File disposition | `FILE_DISPOSITION_MANIFEST_COMPLETE_FOR_FROZEN_SOURCE_DECISION_UNAPPROVED` |
+| Frozen source | `main@68703e138ffa1df26924dd4e018078a246531ace`, 42 tracked paths, successor rebinding required |
 | GitHub Pages | Manual-only and fail-closed unless `release.md` is explicitly `READY` |
 | Package/image release | Blocked |
 | Operational use | Blocked except bounded, authorized laboratory evaluation |
@@ -37,7 +41,7 @@ The current contents include the **XYZ / PhantomBlock defensive firmware-assessm
 
 ## Safe contribution boundary
 
-Documentation, evidence classification, reproducibility, risk analysis, migration planning, consolidation planning, retirement evidence, overlap analysis, and rollback preparation may proceed. Feature expansion, production adapters, credentialed management-plane access, disruptive isolation, package publication, image publication, Pages deployment, certification claims, or operational integration require separate explicit approval.
+Documentation, evidence classification, reproducibility, risk analysis, migration planning, consolidation planning, retirement evidence, overlap analysis, exact-source manifests, and rollback preparation may proceed. Feature expansion, production adapters, credentialed management-plane access, disruptive isolation, package publication, image publication, Pages deployment, certification claims, or operational integration require separate explicit approval.
 
 Use only systems you own or are explicitly authorized to assess. Do not place credentials, proprietary firmware, sensitive packet captures, customer data, private findings, or production evidence in this public repository.
 
@@ -48,22 +52,24 @@ flowchart LR
     A[Approved research question] --> B[Incubation record]
     B --> C[Preserved prototype and evidence]
     C --> D[Component and overlap inventory]
-    D --> E{Architect disposition}
-    E -->|Dedicated migration| F[Dedicated owning repository]
-    E -->|Modular consolidation| G[Named consolidated owner]
-    E -->|Retirement| H[Archive with limitations]
-    E -->|Hold| I[No capability expansion]
-    F --> J[Independent validation and release gates]
-    G --> J
+    D --> E[42-path blob-bound frozen-source manifest]
+    E --> F{Architect disposition}
+    F -->|Dedicated migration| G[Dedicated owning repository]
+    F -->|Modular consolidation| H[Named consolidated owner]
+    F -->|Retirement| I[Archive with limitations]
+    F -->|Hold| J[No capability expansion]
+    G --> K[Independent validation and release gates]
+    H --> K
 ```
 
-**Equivalent prose:** A research question enters `Misc` only as an incubation record. Any prototype and its evidence are preserved without becoming an accepted product. A component and overlap inventory identifies what exists, where it conflicts with portfolio ownership, and which witnesses are missing. An Architect must later choose dedicated migration, modular consolidation, evidence-preserving retirement, or continued hold. Migration or consolidation moves only an approved subset under a named owner, where independent validation and release gates begin; retirement preserves history and limitations; a hold prevents further capability expansion.
+**Equivalent prose:** A research question enters `Misc` only as an incubation record. Any prototype and its evidence are preserved without becoming an accepted product. A component and overlap inventory identifies what exists and where ownership conflicts remain. The exact frozen-source manifest binds all 42 tracked paths at `68703e1…` to Git blobs, component and evidence classes, sensitivity, limitations, owner vacancies, correction, and rollback. Because each later source generation changes the tree, the manifest must be explicitly rebound or superseded rather than silently treated as current. An Architect must later choose dedicated migration, modular consolidation, evidence-preserving retirement, or continued hold. Migration or consolidation moves only an approved subset under a named owner, where independent validation and release gates begin; retirement preserves history and limitations; a hold prevents further capability expansion.
 
 ## FYSA-120 capability map
 
-This documentation work uses the skill tree as a planning aid, especially `CAT-011` for accessible diagrams, `CAT-012` for documentation architecture, `CAT-013` for component classification and overlap graphs, `CAT-017` for evidence lineage, `CAT-018` for institutional memory, `CAT-019` for accessible explanation, `CAT-031` and `CAT-032` for contract and failure analysis, and `CAT-040` for migration and rollback. Taxonomy mapping does not establish competence, ownership, permission, or authority.
+This documentation work uses the skill tree as a planning aid, especially `CAT-011` for accessible diagrams, `CAT-012` for documentation architecture, `CAT-013` for component classification and overlap graphs, `CAT-017` for exact-source evidence lineage, `CAT-018` for institutional memory, `CAT-019` for accessible explanation, `CAT-031` and `CAT-032` for contract and failure analysis, and `CAT-040` for migration and rollback. Taxonomy mapping does not establish competence, ownership, permission, or authority.
 
 Proposed non-authoritative refinements:
 
 - **`040-P — Incubation exit, authority-neutral migration, modular consolidation, and evidence-preserving retirement`**.
 - **`013-M — Incubated component-family inventories, cross-repository overlap ledgers, and disposition-safe ownership graphs`**.
+- **`017-F — Exact-generation file disposition manifests, blob-bound provenance, and successor rebinding`**.
