@@ -9,7 +9,8 @@ States: `OPEN` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE` · `NOT APPLI
 | Item | Status | Completion evidence |
 |---|---|---|
 | Publish a clear repository front door and status notice | DONE | `README.md` and `phantomblock/docs/incubation-status.md` agree on the holding posture. |
-| Classify implementation, documentation, workflow, package, image, and compliance artifacts | REVIEW | Evidence classes are documented; file-level inventory remains incomplete. |
+| Classify implementation, documentation, workflow, package, image, and compliance component families | REVIEW | `component-overlap-inventory.md` records C01-C18; exact file-level hashes remain incomplete. |
+| Inventory cross-repository overlaps and gluing failures | REVIEW | O01-O10, safe defaults, required witnesses, and ten material obstruction classes are documented without selecting authority. |
 | Prevent automatic Pages publication | DONE | `.github/workflows/pages.yml` is manual-only and blocks unless `release.md` is explicitly `READY`. |
 | Preserve the prototype and history without capability expansion | REVIEW | Current source is retained; future changes require scope checks. |
 | Record intended users, authorized-use boundary, non-goals, and evidence limits | DONE | README, onboarding, threat model, and release plan contain the boundary. |
@@ -22,6 +23,7 @@ States: `OPEN` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE` · `NOT APPLI
 |---|---|---|
 | Maintain a stable documentation front door | REVIEW | MkDocs navigation and internal-link validation pass at the exact candidate head. |
 | Document architecture and trust boundaries with an equivalent prose alternative | REVIEW | `phantomblock/docs/architecture.md` passes documentation validation. |
+| Provide a component and overlap inventory with accessible graph and prose | REVIEW | Markdown and JSON inventories agree on status, components, overlaps, obstructions, and next artifact. |
 | Provide safe onboarding before operational commands | REVIEW | `phantomblock/docs/onboarding.md` foregrounds authorization, privacy, and non-deployment boundaries. |
 | Provide a developer guide for repository layout, tests, evidence, and change control | REVIEW | `phantomblock/docs/developer-guide.md` is linked from README and MkDocs. |
 | Provide an exit playbook with an equivalent prose decision path | REVIEW | Exit guide includes accessible flow, source freeze, component ledger, manifest, contract review, rollback, restoration, and onboarding. |
@@ -32,8 +34,8 @@ States: `OPEN` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE` · `NOT APPLI
 
 | Item | Status | Completion evidence |
 |---|---|---|
-| Create an exact file-level prototype inventory | OPEN | Manifest binds paths, roles, hashes, and evidence classes. |
-| Assign every component and authority surface a disposition | OPEN | Ledger records source path, target/archive identity, disposition, semantic/interface owner, losses, and rollback. |
+| Create an exact file-level prototype inventory | IN PROGRESS | Next manifest must bind every relevant path to digest, component ID, evidence/sensitivity class, source commit, disposition, target/archive, owner/vacancy, losses, correction, and rollback. |
+| Assign every component and authority surface a disposition | REVIEW | Component-family options are documented; Architect selection and path-level disposition remain blocked. |
 | Preserve source-to-target history | BLOCKED | Approved destination or archive and independently reviewable commit map required. |
 | Define representative supported and unsupported platform matrices | BLOCKED | Ownership and laboratory scope required. |
 | Establish trusted firmware-baseline provenance | BLOCKED | Approved sources, custody, signatures, and update policy required. |
@@ -46,8 +48,8 @@ States: `OPEN` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE` · `NOT APPLI
 
 | Item | Status | Completion evidence |
 |---|---|---|
-| Document credential, privilege, management-plane, packet-capture, and firmware boundaries | REVIEW | Threat model and onboarding agree. |
-| Separate passive collection from disruptive response | REVIEW | Architecture and extension documentation preserve the boundary. |
+| Document credential, privilege, management-plane, packet-capture, and firmware boundaries | REVIEW | Threat model, onboarding, and component inventory agree. |
+| Separate passive collection from disruptive response | REVIEW | Architecture and C12 preserve the boundary. |
 | Define correction and withdrawal propagation for published claims | OPEN | Every controlled route has an owner or explicit vacancy. |
 | Define repository migration and consolidation rollback | BLOCKED | Destination repository and owner required. |
 | Define retirement and archival procedure | REVIEW | Exit playbook preserves source identity, evidence, limitations, deprecation, and restoration criteria. |
@@ -70,6 +72,9 @@ The Architect decision must name the chosen disposition, destination or archival
 
 ## FYSA-120 mapping
 
-Applied planning categories: `CAT-011`, `CAT-012`, `CAT-013`, `CAT-017`, `CAT-018`, `CAT-019`, `CAT-031`, `CAT-040`, `CAT-052`, and `CAT-054`.
+Applied planning categories: `CAT-011`, `CAT-012`, `CAT-013`, `CAT-017`, `CAT-018`, `CAT-019`, `CAT-031`, `CAT-032`, `CAT-040`, `CAT-052`, and `CAT-054`.
 
-Proposed non-authoritative refinement: **`040-P — Incubation exit, authority-neutral migration, modular consolidation, and evidence-preserving retirement`**. It replaces the narrower local `040-H` proposal without granting authority.
+Proposed non-authoritative refinements:
+
+- **`040-P — Incubation exit, authority-neutral migration, modular consolidation, and evidence-preserving retirement`**.
+- **`013-M — Incubated component-family inventories, cross-repository overlap ledgers, and disposition-safe ownership graphs`**.

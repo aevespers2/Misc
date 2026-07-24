@@ -1,0 +1,74 @@
+{
+  "schema": "misc.xyz.component-overlap-inventory.v1",
+  "status": "COMPONENT_OVERLAP_INVENTORY_DOCUMENTED_DISPOSITION_UNAPPROVED",
+  "authority_effect": "NONE",
+  "scope": {
+    "repository": "aevespers2/Misc",
+    "prototype_root": "phantomblock/",
+    "reviewed_source": "f50312aaf0a219b1f84de0972cfa42ed5c5cbb36",
+    "complete_file_hash_manifest": false
+  },
+  "components": [
+    {"id":"C01","surface":"phantomblock/pyproject.toml","role":"package metadata, dependencies, console and extension entry points","evidence_class":"IMPLEMENTED_METADATA","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C02","surface":"phantomblock/src/phantomblock/","role":"Python prototype source package","evidence_class":"IMPLEMENTED_PROTOTYPE_FAMILY","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C03","surface":"xyz and phantomblock console entry points","role":"local command interface","evidence_class":"IMPLEMENTED_PROTOTYPE_INTERFACE","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C04","surface":"inventory collectors","role":"hardware, operating-system, module and firmware observations","evidence_class":"IMPLEMENTED_PROTOTYPE_FAMILY","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C05","surface":"firmware and baseline comparison","role":"hash and manifest observations","evidence_class":"IMPLEMENTED_PROTOTYPE_FAMILY","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C06","surface":"kernel and low-level heuristics","role":"finding generation","evidence_class":"IMPLEMENTED_PROTOTYPE_FAMILY","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C07","surface":"management-plane assessment","role":"AMT, IPMI, Redfish and BMC observations","evidence_class":"IMPLEMENTED_PROTOTYPE_FAMILY","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C08","surface":"external packet analysis","role":"offline PCAP or TAP/SPAN evidence interpretation","evidence_class":"IMPLEMENTED_PROTOTYPE_FAMILY","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C09","surface":"report schema and evidence output","role":"versioned findings transport","evidence_class":"PROTOTYPE_INTERFACE","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C10","surface":"dashboard and local API","role":"human review and presentation","evidence_class":"IMPLEMENTED_PROTOTYPE_FAMILY","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C11","surface":"passive extension registry","role":"third-party capability entry-point seam","evidence_class":"CONFIGURED_PROTOTYPE_INTERFACE","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C12","surface":"dry-run response or isolation abstraction","role":"separately bounded response seam","evidence_class":"IMPLEMENTED_CONCEPTUAL_BOUNDARY","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C13","surface":"phantomblock/tests/","role":"unit and documentation regressions","evidence_class":"IMPLEMENTED_TEST_FAMILY","authority":"NONE","disposition":"PRESERVE"},
+    {"id":"C14","surface":"phantomblock/docs/ and phantomblock/mkdocs.yml","role":"Pages-ready documentation","evidence_class":"IMPLEMENTED_DOCUMENTATION_FAMILY","authority":"NONE","disposition":"PRESERVE"},
+    {"id":"C15","surface":"CI and Pages workflows","role":"validation and manual publication capability","evidence_class":"CONFIGURED_AUTOMATION","authority":"NONE","disposition":"PRESERVE_FAIL_CLOSED"},
+    {"id":"C16","surface":"live-image definition","role":"external scanner environment candidate","evidence_class":"IMPLEMENTED_BUILD_DEFINITION","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C17","surface":"binary and SBOM build scripts","role":"packaging and supply-chain evidence candidate","evidence_class":"IMPLEMENTED_BUILD_FAMILY","authority":"NONE","disposition":"UNSELECTED"},
+    {"id":"C18","surface":"compliance mappings","role":"non-authoritative control crosswalks","evidence_class":"DOCUMENTATION_EVIDENCE","authority":"NONE","disposition":"UNSELECTED"}
+  ],
+  "overlaps": [
+    {"id":"O01","peer":"aevespers2/JusticeForMe","concern":"host observation and collector vocabulary","status":"CANDIDATE_CONFLICT","safe_default":"PRESERVE_SEPARATE","required_witness":"field, source, privilege, platform, correction and loss comparison"},
+    {"id":"O02","peer":"aevespers2/0","concern":"proposal and bounded orchestration","status":"UNACCEPTED_ROUTE","safe_default":"OBSERVATION_AND_PROPOSAL_ONLY","required_witness":"proposal identity, protected paths, capability class, receipt, rollback and wrong-device fixtures"},
+    {"id":"O03","peer":"aevespers2/1","concern":"disposition, revocation, checkpoint and recovery","status":"UNSUPPORTED_ROUTE","safe_default":"NO_CANONICAL_DISPOSITION","required_witness":"evidence identity, admission, human decision, revocation acknowledgment, checkpoint ancestry and restoration"},
+    {"id":"O04","peer":"aevespers2/QSO-SEEKER","concern":"source sanitization, attribution and rights","status":"UNACCEPTED_BINDING","safe_default":"UNTRUSTED_PRIVATE_INPUT","required_witness":"source identity, rights, sanitizer transform, loss, retention, withdrawal and deletion"},
+    {"id":"O05","peer":"aevespers2/datarepo-temporal-invariants","concern":"freshness, replay and supersession","status":"UNACCEPTED_BINDING","safe_default":"STALE_OR_UNKNOWN_CANNOT_PROMOTE","required_witness":"subject identity, observation time, validity, supersession, replay and clock failure"},
+    {"id":"O06","peer":"aevespers2/QSO-DIGITALIS","concern":"interpretation and policy projection","status":"ROLE_COLLISION_RISK","safe_default":"SEPARATE_OBSERVATION_AND_INTERPRETATION","required_witness":"source set, transform, uncertainty, reason code, correction and policy generation"},
+    {"id":"O07","peer":"aevespers2/Bridge","concern":"transport and evidence handoff","status":"UNACCEPTED_CONTRACT","safe_default":"NO_EXTERNAL_HANDOFF","required_witness":"producer, consumer, bytes, digest, ordering, replay, redaction, errors and receipt"},
+    {"id":"O08","peer":"aevespers2/QSO-STUDIO","concern":"human review contract","status":"UNACCEPTED_CONTRACT","safe_default":"DISPLAY_AND_ANNOTATION_ONLY","required_witness":"packet identity, evidence links, reviewer action, dissent, correction, export and approval separation"},
+    {"id":"O09","peer":"aevespers2/AionUi","concern":"optional review host shell","status":"UNACCEPTED_HOST_BINDING","safe_default":"OPTIONAL_RENDERING_ONLY","required_witness":"contract version, session isolation, accessibility, export integrity and no-authority behavior"},
+    {"id":"O10","peer":"aevespers2/QSO-FABRIC","concern":"projection and aggregate evidence","status":"UNSUPPORTED_PROJECTION_ROUTE","safe_default":"NO_AGGREGATE_PROMOTION","required_witness":"source-set completeness, loss accounting, duplicate/conflict handling, correction closure and aggregate non-authority"}
+  ],
+  "obstructions": [
+    "IDENTITY_COLLAPSE",
+    "PRIVILEGE_COLLAPSE",
+    "BASELINE_CIRCULARITY",
+    "TEMPORAL_DISCONTINUITY",
+    "LOSSY_PROJECTION",
+    "CONSUMER_ORPHANING",
+    "DUPLICATE_AUTHORITY",
+    "HISTORY_AMBIGUITY",
+    "ROLLBACK_RESURRECTION",
+    "SELF_ATTESTED_RESTORATION"
+  ],
+  "next_required_artifact": {
+    "name": "exact file-level path and hash manifest",
+    "required_fields": [
+      "path",
+      "blob_or_content_digest",
+      "component_id",
+      "evidence_class",
+      "sensitive_data_classification",
+      "source_commit",
+      "proposed_disposition",
+      "target_or_archive_path",
+      "semantic_owner_or_vacancy",
+      "known_losses",
+      "correction_route",
+      "rollback_treatment"
+    ]
+  },
+  "skill_map": ["011-B","011-E","012-A","012-B","012-D","012-E","013-A","013-C","013-D","013-E","017-C","017-D","017-E","018-B","018-D","018-E","019-B","019-C","019-D","031-A","031-D","031-E","032-A","032-D","032-E","040-A","040-B","040-D","040-E"],
+  "proposed_skill_subdivision": "013-M Incubated component-family inventories, cross-repository overlap ledgers, and disposition-safe ownership graphs"
+}
