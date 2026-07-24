@@ -10,13 +10,15 @@ The next release-related decision is not a release. An Architect must approve de
 
 ## Documentation candidate
 
-The repository has a front door, incubation-status guide, accessible architecture, safe onboarding, developer guide, component and portfolio overlap inventory, machine-readable companion, exit and migration playbook, punch list, task chain, release plan, and changelog. These materials improve decision readiness and evidence classification only. They do not convert the prototype into an accepted product or make Pages publication appropriate.
+The repository has a front door, incubation-status guide, accessible architecture, safe onboarding, developer guide, component and portfolio overlap inventory, exact file-level evidence and disposition manifest, machine-readable companions, exit and migration playbook, punch list, task chain, release plan, and changelog. These materials improve decision readiness and evidence classification only. They do not convert the prototype into an accepted product or make Pages publication appropriate.
 
 Controlled exit status: `INCUBATION_EXIT_DOCUMENTED_DISPOSITION_UNAPPROVED`.
 
 Component-overlap status: `COMPONENT_OVERLAP_INVENTORY_DOCUMENTED_DISPOSITION_UNAPPROVED`.
 
-The inventory records eighteen component families, ten portfolio overlaps, safe defaults, required compatibility witnesses, ten material gluing failures, and disposition options. It does not complete the exact file-level path-and-hash manifest or select an owner, target, archive, contract, or migration route.
+File-disposition status: `FILE_DISPOSITION_MANIFEST_COMPLETE_FOR_FROZEN_SOURCE_DECISION_UNAPPROVED`.
+
+The file manifest records all 42 tracked paths at frozen source `68703e138ffa1df26924dd4e018078a246531ace`, their Git blob identities, component/evidence/sensitivity classes, limitations, common fail-closed hold, owner vacancies, correction route, rollback treatment, and explicit successor-rebinding requirement. It does not select an owner, final path disposition, destination, archive, contract, or migration route.
 
 ## Evidence classification
 
@@ -28,6 +30,7 @@ The inventory records eighteen component families, ten portfolio overlaps, safe 
 - GitHub Pages workflow retained as a deployment capability, but automatic `main` publication is disabled; it is manual-only and fails closed unless this file is explicitly marked `READY`.
 - Historical deployment-review and containment records.
 - Historical exact-generation workflow evidence; each changed descendant requires independent revalidation.
+- Exact 42-path blob-bound source manifest for `68703e1…`; any descendant requires a separate rebind or supersession record.
 
 ### Documentation and architecture proposals
 
@@ -43,7 +46,7 @@ These are documentation proposals, not accepted contracts or implemented integra
 ### Not established
 
 - Approved exit disposition, destination, archive, or owner.
-- Complete exact file-level path, digest, evidence, sensitivity, disposition, owner, loss, correction, and rollback manifest.
+- Architect-approved final per-path dispositions, target/archive paths, accepted owners, or source-to-target history map.
 - Accepted cross-repository overlap edges, producer/consumer registrations, interface ownership, or compatibility witnesses.
 - Current release-candidate or resulting-default-head validation evidence.
 - Representative BIOS/UEFI, NIC, BMC, SSD, chipset, operating-system, switch, or PCAP validation.
@@ -78,6 +81,7 @@ A future candidate may include only an explicitly reviewed subset of:
 - Certification, DoD/Army authorization, operational-readiness, supported-platform, or comprehensive-detection claims unsupported by formal evidence.
 - Permanent production ownership by `Misc` or bypass of existing portfolio repository boundaries.
 - Treating a copied directory, inventory, manifest, passing workflow, or documentation approval as product, integration, release, or deployment authorization.
+- Treating the frozen-source file manifest as current for a changed descendant without explicit rebinding.
 - Destructive history rewriting solely to simplify transfer.
 
 ## Acceptance gates
@@ -85,10 +89,10 @@ A future candidate may include only an explicitly reviewed subset of:
 | Gate | Status | Requirement |
 |---|---|---|
 | Scope containment | REVIEW | Manual-only Pages gate remains fail-closed; feature, package, image, and deployment promotion remain frozen. |
-| Documentation integrity | REVIEW | README, MkDocs pages, component inventory, exit playbook, `taskchain.md`, `punchlist.md`, `release.md`, and `changelog.md` agree and pass exact-head checks. |
+| Documentation integrity | REVIEW | README, MkDocs pages, component inventory, file manifest, exit playbook, `taskchain.md`, `punchlist.md`, `release.md`, and `changelog.md` agree and pass exact-head checks. |
 | Exit disposition | FAIL | Architect approves dedicated migration, modular consolidation, evidence-preserving retirement, or continued hold. |
 | Component-family inventory | REVIEW | C01-C18 and O01-O10 are documented; reviewer confirmation and exact-source rebinding remain required. |
-| File and history disposition | FAIL | Every relevant path and authority surface receives a digest-bound disposition; source-to-target or archive provenance is independently reviewable. |
+| File and history disposition | PARTIAL | All 42 paths at `68703e1…` have exact blob-bound source records and a common hold; final dispositions, owners, target/archive paths, source-to-target history, and successor rebinding remain unapproved. |
 | Ownership | FAIL | Destination or archive, semantic/interface owners, security/privacy reviewers, evidence custodian, correction/revocation owners, publication authority, and rollback owner are named or explicitly vacant. |
 | Product definition | FAIL | Intended user, authorized-use boundary, supported and unsupported platforms, claims, limitations, and non-goals are approved. |
 | Repository overlap | FAIL | Overlap with JusticeForMe, Repository `0`, Repository `1`, QSO-SEEKER, the temporal repository, QSO-DIGITALIS, Bridge, QSO-STUDIO, AionUi, QSO-FABRIC, verification, and security repositories is reviewed and dispositioned. |
@@ -100,13 +104,13 @@ A future candidate may include only an explicitly reviewed subset of:
 | Accessibility | REVIEW | Diagrams have equivalent prose and documentation routes are structured; generated-site accessibility evidence remains required. |
 | Publication | CONTAINED | Automatic publication is disabled; explicit Pages target, review, and approval remain required. |
 | Security/privacy | FAIL | Credential, privilege, network, firmware, evidence, privacy, disclosure, retention, correction, revocation, incident-response, and overlap boundaries pass review. |
-| Provenance/rollback | PARTIAL | Containment records exist; approved path/hash manifest, source-to-target map, candidate archives, signed provenance, rollback drill, and restored-state verification remain absent. |
+| Provenance/rollback | PARTIAL | Exact source blobs and containment records exist; approved source-to-target map, candidate archives, signed provenance, rollback drill, and restored-state verification remain absent. |
 | Approval | PENDING | Explicit release and publication approval only after every blocking gate passes. |
 
 ## Required artifacts
 
 - Approved disposition and destination, consolidated owner, archive, or hold record.
-- Complete exact file-level path-and-hash disposition manifest.
+- Reviewed exact file-level source manifest and an approved successor-bound disposition manifest.
 - Reviewed component and overlap inventory bound to its exact source generation.
 - Source-to-target commit map or immutable archive identity with authenticity evidence.
 - Product directive, supported-platform matrix, threat model, authorized-use policy, and repository-overlap decision.
@@ -118,12 +122,12 @@ A future candidate may include only an explicitly reviewed subset of:
 
 ## Rollback and withdrawal criteria
 
-Reject, withdraw, or hold a candidate if ownership remains ambiguous; any component or path lacks a disposition; implementation continues in `Misc` without approval; copied history cannot be distinguished from destination-authored work; duplicate authority surfaces remain active; public documentation implies release; license or data rights are unresolved; trusted baselines lack independent provenance; privileged or disruptive behavior is not fail-closed; representative and adversarial validation is absent; claims exceed evidence; builds or checks cannot be reproduced; correction or revocation cannot reach controlled consumers; provenance is incomplete; rollback cannot be verified; or the restored state cannot be independently verified. Preserve source history, failed evidence, limitations, supersession, and disposition records.
+Reject, withdraw, or hold a candidate if ownership remains ambiguous; any component or path lacks a disposition; implementation continues in `Misc` without approval; copied history cannot be distinguished from destination-authored work; duplicate authority surfaces remain active; public documentation implies release; license or data rights are unresolved; trusted baselines lack independent provenance; privileged or disruptive behavior is not fail-closed; representative and adversarial validation is absent; claims exceed evidence; builds or checks cannot be reproduced; correction or revocation cannot reach controlled consumers; provenance is incomplete; a descendant relies on a stale source manifest; rollback cannot be verified; or the restored state cannot be independently verified. Preserve source history, failed evidence, limitations, supersession, and disposition records.
 
 ## Unresolved blockers
 
 - Architect decision for dedicated migration, modular consolidation, evidence-preserving retirement/archive, or continued hold.
-- Complete exact file-level evidence, disposition, ownership, and source-to-target history manifest.
+- Approved final path-level dispositions, ownership, target/archive paths, and source-to-target history map; the exact frozen-source inventory alone cannot select these.
 - Accepted resolution for every O01-O10 overlap edge and required compatibility witness.
 - Intended user, supported-platform, license, naming, package-identity, and version-lineage approval.
 - Explicit approval of any future GitHub Pages publication or other public artifact.
@@ -139,6 +143,7 @@ Reject, withdraw, or hold a candidate if ownership remains ambiguous; any compon
 - 2026-07-23 — Added the incubation documentation front door and punch list; the release decision remains blocked and unchanged.
 - 2026-07-24 — Added the current-head exit and migration playbook and synchronized release gates without selecting a disposition or changing authority.
 - 2026-07-24 — Added the component-family and portfolio-overlap inventory; release remains blocked pending exact path-level disposition, accepted ownership, compatibility witnesses, validation, and explicit approval.
+- 2026-07-24 — Completed the exact 42-path frozen-source manifest for `68703e1…`; release remains blocked because the manifest records evidence and vacancies but does not approve any owner, destination, migration, publication, or operational route.
 
 ## FYSA-120 mapping
 
@@ -148,5 +153,6 @@ Proposed non-authoritative refinements:
 
 - **`040-P — Incubation exit, authority-neutral migration, modular consolidation, and evidence-preserving retirement`**.
 - **`013-M — Incubated component-family inventories, cross-repository overlap ledgers, and disposition-safe ownership graphs`**.
+- **`017-F — Exact-generation file disposition manifests, blob-bound provenance, and successor rebinding`**.
 
 Taxonomy membership does not establish approval or competence.
