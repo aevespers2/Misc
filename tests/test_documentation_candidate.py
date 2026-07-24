@@ -71,6 +71,29 @@ class DocumentationCandidateTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             validator.validate(root)
 
+    def test_mutable_pr_concurrency_fails(self):
+        root = self.sandbox()
+        workflow = root / ".github/workflows/documentation-candidate.yml"
+        workflow.write_text(
+            workflow.read_text(encoding="utf-8").replace(
+                "${{ github.workflow }}-${{ github.event.pull_request.head.sha || github.sha }}",
+                "${{ github.event.pull_request.number || github.ref }}",
+            ),
+            encoding="utf-8",
+        )
+        with self.assertRaises(ValueError):
+            validator.validate(root)
+
+    def test_cross_generation_cancellation_fails(self):
+        root = self.sandbox()
+        workflow = root / ".github/workflows/documentation-candidate.yml"
+        workflow.write_text(
+            workflow.read_text(encoding="utf-8").replace("cancel-in-progress: false", "cancel-in-progress: true"),
+            encoding="utf-8",
+        )
+        with self.assertRaises(ValueError):
+            validator.validate(root)
+
     def test_missing_front_door_route_fails(self):
         root = self.sandbox()
         readme = root / "README.md"
