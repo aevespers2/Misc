@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import importlib.util
+import json
 import shutil
 import tempfile
 import unittest
@@ -25,10 +26,20 @@ class DocumentationCandidateTests(unittest.TestCase):
         self.addCleanup(tmp.cleanup)
         return root
 
+    def manifest(self, root: Path) -> tuple[Path, dict]:
+        path = root / validator.MANIFEST_PATH
+        return path, json.loads(path.read_text(encoding="utf-8"))
+
+    def write_manifest(self, path: Path, value: dict) -> None:
+        path.write_text(json.dumps(value, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+
     def test_current_candidate_passes(self):
         report = validator.validate(Path(__file__).parents[1])
         self.assertEqual(report["release_state"], "BLOCKED")
         self.assertEqual(report["authority_effect"], "none")
+        self.assertEqual(report["frozen_source_records"], 42)
+        self.assertEqual(report["frozen_source_commit"], validator.FROZEN_SOURCE_COMMIT)
+        self.assertTrue(report["successor_rebind_required"])
 
     def test_missing_punchlist_fails(self):
         root = self.sandbox()
@@ -105,7 +116,61 @@ class DocumentationCandidateTests(unittest.TestCase):
         root = self.sandbox()
         for name in validator.CONTROLLED_PLANNING:
             path = root / name
-            path.write_text(path.read_text(encoding="utf-8").replace("040-H", "040-X"), encoding="utf-8")
+            path.write_text(path.read_text(encoding="utf-8").replace("017-F", "017-X"), encoding="utf-8")
+        with self.assertRaises(ValueError):
+            validator.validate(root)
+
+    def test_missing_manifest_record_fails(self):
+        root = self.sandbox()
+        path, value = self.manifest(root)
+        value["records"].pop()
+        self.write_manifest(path, value)
+        with self.assertRaises(ValueError):
+            validator.validate(root)
+
+    def test_duplicate_manifest_path_fails(self):
+        root = self.sandbox()
+        path, value = self.manifest(root)
+        value["records"][-1] = value["records"][0]
+        self.write_manifest(path, value)
+        with self.assertRaises(ValueError):
+            validator.validate(root)
+
+    def test_malformed_manifest_blob_fails(self):
+        root = self.sandbox()
+        path, value = self.manifest(root)
+        value["records"][0][1] = "not-a-git-blob"
+        self.write_manifest(path, value)
+        with self.assertRaises(ValueError):
+            validator.validate(root)
+
+    def test_wrong_frozen_source_fails(self):
+        root = self.sandbox()
+        path, value = self.manifest(root)
+        value["source"]["commit"] = "0" * 40
+        self.write_manifest(path, value)
+        with self.assertRaises(ValueError):
+            validator.validate(root)
+
+    def test_authority_denial_removed_fails(self):
+        root = self.sandbox()
+        path, value = self.manifest(root)
+        value["authority_denials"]["deployment"] = False
+        self.write_manifest(path, value)
+        with self.assertRaises(ValueError):
+            validator.validate(root)
+
+    def test_nonfinite_manifest_value_fails(self):
+        root = self.sandbox()
+        path = root / validator.MANIFEST_PATH
+        path.write_text(path.read_text(encoding="utf-8").replace('"expected":42', '"expected":NaN', 1), encoding="utf-8")
+        with self.assertRaises(ValueError):
+            validator.validate(root)
+
+    def test_duplicate_manifest_key_fails(self):
+        root = self.sandbox()
+        path = root / validator.MANIFEST_PATH
+        path.write_text(path.read_text(encoding="utf-8").replace('{"schema":', '{"schema":"duplicate","schema":', 1), encoding="utf-8")
         with self.assertRaises(ValueError):
             validator.validate(root)
 
