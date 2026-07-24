@@ -1,6 +1,6 @@
 # Punch List
 
-This list governs bounded documentation, evidence, ownership, migration, retirement, and rollback work for `Misc` and the preserved XYZ / PhantomBlock prototype. Completion of an item does not authorize release, deployment, assessment of third-party systems, certification, or operational integration.
+This list governs bounded documentation, evidence, ownership, migration, consolidation, retirement, and rollback work for `Misc` and the preserved XYZ / PhantomBlock prototype. Completion of an item does not authorize release, deployment, assessment of third-party systems, certification, or operational integration.
 
 States: `OPEN` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE` · `NOT APPLICABLE`
 
@@ -13,7 +13,8 @@ States: `OPEN` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE` · `NOT APPLI
 | Prevent automatic Pages publication | DONE | `.github/workflows/pages.yml` is manual-only and blocks unless `release.md` is explicitly `READY`. |
 | Preserve the prototype and history without capability expansion | REVIEW | Current source is retained; future changes require scope checks. |
 | Record intended users, authorized-use boundary, non-goals, and evidence limits | DONE | README, onboarding, threat model, and release plan contain the boundary. |
-| Decide dedicated ownership, migration, retirement, or continued hold | BLOCKED | Explicit Architect disposition required. |
+| Document dedicated migration, modular consolidation, evidence-preserving retirement, and continued hold | REVIEW | `phantomblock/docs/incubation-exit-and-migration.md` defines controlled dispositions without selecting one. |
+| Decide dedicated migration, modular consolidation, retirement, or continued hold | BLOCKED | Explicit Architect disposition required. |
 
 ## P1 — Documentation and information architecture
 
@@ -23,6 +24,7 @@ States: `OPEN` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE` · `NOT APPLI
 | Document architecture and trust boundaries with an equivalent prose alternative | REVIEW | `phantomblock/docs/architecture.md` passes documentation validation. |
 | Provide safe onboarding before operational commands | REVIEW | `phantomblock/docs/onboarding.md` foregrounds authorization, privacy, and non-deployment boundaries. |
 | Provide a developer guide for repository layout, tests, evidence, and change control | REVIEW | `phantomblock/docs/developer-guide.md` is linked from README and MkDocs. |
+| Provide an exit playbook with an equivalent prose decision path | REVIEW | Exit guide includes accessible flow, source freeze, component ledger, manifest, contract review, rollback, restoration, and onboarding. |
 | Keep `taskchain.md`, `release.md`, `punchlist.md`, and `changelog.md` synchronized | REVIEW | Automated planning-document consistency checks pass. |
 | Select a license and document third-party data and firmware rights | BLOCKED | Legal and owner decision required. |
 
@@ -31,9 +33,12 @@ States: `OPEN` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE` · `NOT APPLI
 | Item | Status | Completion evidence |
 |---|---|---|
 | Create an exact file-level prototype inventory | OPEN | Manifest binds paths, roles, hashes, and evidence classes. |
+| Assign every component and authority surface a disposition | OPEN | Ledger records source path, target/archive identity, disposition, semantic/interface owner, losses, and rollback. |
+| Preserve source-to-target history | BLOCKED | Approved destination or archive and independently reviewable commit map required. |
 | Define representative supported and unsupported platform matrices | BLOCKED | Ownership and laboratory scope required. |
 | Establish trusted firmware-baseline provenance | BLOCKED | Approved sources, custody, signatures, and update policy required. |
 | Add malformed-input, parser, extension, and hostile-report fixtures | OPEN | Synthetic-only fixtures and regressions pass. |
+| Add duplicate, conflict, stale, replay, wrong-device, correction, revocation, withdrawal, and rollback fixtures | OPEN | Cross-repository and triple-overlap cases fail closed. |
 | Characterize false positives, false negatives, and uncertainty | BLOCKED | Representative evidence and independent review required. |
 | Retain deterministic documentation and test evidence | REVIEW | Pull-request workflow uploads exact-head reports and input hashes. |
 
@@ -44,8 +49,9 @@ States: `OPEN` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE` · `NOT APPLI
 | Document credential, privilege, management-plane, packet-capture, and firmware boundaries | REVIEW | Threat model and onboarding agree. |
 | Separate passive collection from disruptive response | REVIEW | Architecture and extension documentation preserve the boundary. |
 | Define correction and withdrawal propagation for published claims | OPEN | Every controlled route has an owner or explicit vacancy. |
-| Define repository migration rollback | BLOCKED | Destination repository and owner required. |
-| Define retirement and archival procedure | OPEN | Archive preserves source identity, evidence, limitations, and supersession route. |
+| Define repository migration and consolidation rollback | BLOCKED | Destination repository and owner required. |
+| Define retirement and archival procedure | REVIEW | Exit playbook preserves source identity, evidence, limitations, deprecation, and restoration criteria. |
+| Verify restored-state evidence | BLOCKED | Prior state is independently reconstructable and exact-head checks pass after restoration. |
 | Conduct a history-aware secrets and sensitive-data review | BLOCKED | Authorized reviewer and remediation plan required. |
 
 ## P4 — Release and publication
@@ -60,10 +66,10 @@ States: `OPEN` · `IN PROGRESS` · `BLOCKED` · `REVIEW` · `DONE` · `NOT APPLI
 
 ## Decision packet still required
 
-The Architect decision must name the chosen disposition, destination or archival location, scope, owner or vacancy, license path, history-preservation method, compatibility and redirect policy, security/privacy reviewers, evidence custodian, publication authority, rollback owner, and conditions for reopening the decision.
+The Architect decision must name the chosen disposition, destination or archival location, scope, owner or vacancy, license path, history-preservation method, compatibility and redirect policy, security/privacy reviewers, evidence custodian, publication authority, correction and revocation owners, rollback owner, restoration witness, and conditions for reopening the decision.
 
 ## FYSA-120 mapping
 
-Applied planning categories: `CAT-012`, `CAT-013`, `CAT-017`, `CAT-019`, `CAT-031`, `CAT-040`, `CAT-052`, and `CAT-054`.
+Applied planning categories: `CAT-011`, `CAT-012`, `CAT-013`, `CAT-017`, `CAT-018`, `CAT-019`, `CAT-031`, `CAT-040`, `CAT-052`, and `CAT-054`.
 
-Proposed non-authoritative subdivision: **`040-H — incubation-to-ownership documentation, retirement evidence, and reversible repository handoff`**.
+Proposed non-authoritative refinement: **`040-P — Incubation exit, authority-neutral migration, modular consolidation, and evidence-preserving retirement`**. It replaces the narrower local `040-H` proposal without granting authority.
