@@ -14,6 +14,7 @@ All notable product, architecture, implementation, release, and deployment chang
 - 2026-07-23 — Added a repository and documentation front door that clearly separates preserved implementation, configured automation, historical validation, proposals, missing evidence, and blocked authority.
 - 2026-07-24 — Added four controlled incubation dispositions: dedicated migration, modular consolidation, evidence-preserving retirement, and continued hold. No disposition was selected or approved.
 - 2026-07-24 — Added `COMPONENT_OVERLAP_INVENTORY_DOCUMENTED_DISPOSITION_UNAPPROVED`; component-family and portfolio-overlap documentation does not select a destination, owner, contract, migration, release, publication, or operational route.
+- 2026-07-24 — Added `FILE_DISPOSITION_MANIFEST_COMPLETE_FOR_FROZEN_SOURCE_DECISION_UNAPPROVED`; the exact frozen-source inventory completes a bounded evidence task but does not approve any disposition or authority.
 
 ### Architecture
 
@@ -24,6 +25,7 @@ All notable product, architecture, implementation, release, and deployment chang
 - 2026-07-23 — Added accessible system-context and incubation-lifecycle diagrams with equivalent prose, explicit trust and ownership vacancies, interface-documentation requirements, and fail-closed obstruction conditions.
 - 2026-07-24 — Added an authority-neutral exit architecture requiring an immutable source freeze, component disposition ledger, source-to-target or archive provenance, contract-gluing review, duplicate-authority deprecation, correction and revocation propagation, rollback, and restored-state verification.
 - 2026-07-24 — Added C01-C18 component families, O01-O10 portfolio overlaps, ten gluing failures, safe defaults, required pairwise witnesses, and a disposition matrix covering dedicated migration, modular consolidation, retirement, and continued hold.
+- 2026-07-24 — Bound all 42 paths in source `68703e138ffa1df26924dd4e018078a246531ace` to Git blob identities, component/evidence/sensitivity classes, limitations, common hold disposition, owner vacancies, correction, and rollback; generated manifest files are explicitly excluded to avoid self-reference and every descendant requires rebinding.
 
 ### Documentation
 
@@ -35,6 +37,8 @@ All notable product, architecture, implementation, release, and deployment chang
 - 2026-07-24 — Synchronized README, MkDocs navigation, documentation front door, `taskchain.md`, `punchlist.md`, `release.md`, and this changelog around `INCUBATION_EXIT_DOCUMENTED_DISPOSITION_UNAPPROVED`.
 - 2026-07-24 — Added `phantomblock/docs/component-overlap-inventory.md` and `component-overlap-inventory-v1.json`, with an accessible portfolio relationship diagram, prose equivalent, observed component ledger, ownership conflicts, required witnesses, completion boundary, reviewer onboarding, and skill-tree mapping.
 - 2026-07-24 — Synchronized README, MkDocs navigation, `taskchain.md`, `punchlist.md`, `release.md`, and this changelog around the component-overlap milestone while preserving the incomplete exact file-level manifest as a separate blocking task.
+- 2026-07-24 — Added `phantomblock/docs/file-disposition-manifest.md` and `file-disposition-manifest-v1.json`, with 42 exact source records, an accessible disposition flow and prose equivalent, limitation catalog, authority denials, reviewer onboarding, successor rebinding, and FYSA-120 mapping.
+- 2026-07-24 — Synchronized README, Pages navigation, project overview, `taskchain.md`, `punchlist.md`, `release.md`, and this changelog around the frozen-source file-disposition milestone.
 
 ### Implementation
 
@@ -44,6 +48,7 @@ All notable product, architecture, implementation, release, and deployment chang
 - No current release-candidate validation, supported-platform evidence, or operational approval is established by this documentation change.
 - 2026-07-24 — No runtime, collector, parser, package, API, dashboard, extension, workflow-permission, credential, networking, response, publication, release, deployment, or infrastructure behavior changed in the exit-governance milestone.
 - 2026-07-24 — The component-overlap milestone changed documentation and planning records only; it created no adapter, registration, cross-repository integration, migration, capability, credential, service, or publication behavior.
+- 2026-07-24 — The file-disposition milestone changes documentation, machine-readable governance evidence, validation, and planning records only; it does not move or transform any recorded prototype path.
 
 ### Security and compliance
 
@@ -53,6 +58,7 @@ All notable product, architecture, implementation, release, and deployment chang
 - 2026-07-23 — Strengthened public guidance against credentials, proprietary firmware, sensitive packet captures, customer data, private findings, and production evidence in Git, CI, Pages, issues, or public artifacts.
 - 2026-07-24 — Added fail-closed exit conditions for unclear source or target identity, incomplete component dispositions, vacant required owners, lossy or untested transformations, ambiguous copied history, duplicate authority surfaces, unpropagated corrections or revocations, sensitive-data handling gaps, unauthorized credential or infrastructure operations, and unverifiable rollback or restoration.
 - 2026-07-24 — Added overlap-specific security defaults for collector duplication, proposal/execution collapse, unsupported canonical disposition, untrusted source input, stale evidence, observation/interpretation collapse, external handoff, UI authority inflation, aggregate evidence inflation, and rollback resurrection.
+- 2026-07-24 — Classified every frozen-source path by public sensitivity and retained all migration, publication, release, credential, network, privileged-collection, active-response, deployment, and destructive-history authority denials as `true`.
 
 ### Validation
 
@@ -62,15 +68,17 @@ All notable product, architecture, implementation, release, and deployment chang
 - 2026-07-24 — Required every changed descendant and resulting state to retain its own exact-head validation; historical passing evidence remains historical evidence only.
 - 2026-07-24 — Required the Markdown and JSON component inventories, lifecycle routes, status markers, diagram alternatives, and exact-source currentness to remain synchronized.
 - 2026-07-24 — Repaired documentation-workflow concurrency so every pull-request and `main` generation is isolated by immutable submitted SHA and cannot cancel evidence collection for an earlier exact head; added hostile regressions that reject mutable PR/ref grouping and cross-generation cancellation.
+- 2026-07-24 — Added strict duplicate-key and non-finite JSON rejection plus frozen source, exact 42-path set, unique path, blob-format, component, classification, authority-denial, and successor-rebinding validation with hostile regressions.
 
 ### Release
 
 - No package, image, service, deployment, certification, or production capability is approved from the current prototype.
 - The first eligible decision is not a release: the Architect must approve dedicated migration, modular consolidation, evidence-preserving retirement, or continued hold.
-- Release remains blocked on ownership, exact file-level disposition, source-to-target history, accepted overlap witnesses, license, threat model, trusted-baseline provenance, representative and adversarial validation, reproducible CI, SBOM/checksums, security review, correction and revocation propagation, rollback, restoration, and explicit approval.
+- Release remains blocked on ownership, final path disposition, source-to-target history, accepted overlap witnesses, license, threat model, trusted-baseline provenance, representative and adversarial validation, reproducible CI, SBOM/checksums, security review, correction and revocation propagation, rollback, restoration, and explicit approval.
 - 2026-07-23 — Confirmed that the documentation milestone does not change the blocked release or publication status.
 - 2026-07-24 — Classified the exit playbook as `DOCUMENTED_NOT_APPROVED`; documentation and workflow success cannot authorize migration, release, publication, or operational use.
 - 2026-07-24 — Recorded the component inventory as review evidence only; an inventory, path manifest, or overlap graph cannot authorize ownership, migration, integration, release, or deployment.
+- 2026-07-24 — Completed the exact frozen-source manifest while preserving the distinction between an evidence inventory and an approved final disposition.
 
 ### Deployment
 
@@ -78,6 +86,7 @@ All notable product, architecture, implementation, release, and deployment chang
 - No operational scanner, live image, dashboard, switch isolation adapter, or external integration is authorized for deployment.
 - 2026-07-24 — Exit-governance documentation did not move source, publish Pages, rotate credentials, deploy services, apply infrastructure, or authorize active response.
 - 2026-07-24 — Component-overlap documentation did not invoke external systems, access firmware or packet evidence, change credentials, publish Pages, move source, activate consumers, deploy services, or apply infrastructure.
+- 2026-07-24 — File-manifest documentation did not execute any disposition, copy source, publish Pages, use credentials, access devices or evidence, deploy services, or alter infrastructure.
 
 ### FYSA-120
 
@@ -85,6 +94,7 @@ All notable product, architecture, implementation, release, and deployment chang
 - 2026-07-24 — Applied `CAT-017`, `CAT-022`, `CAT-031`, `CAT-040`, `CAT-052`, `CAT-054`, and `CAT-059` to the exact-head evidence-continuity repair; existing refinement `031-L` covers this repair class.
 - 2026-07-24 — Proposed non-authoritative refinement `040-P — Incubation exit, authority-neutral migration, modular consolidation, and evidence-preserving retirement`, superseding the narrower local `040-H` proposal for this repository.
 - 2026-07-24 — Proposed non-authoritative refinement `013-M — Incubated component-family inventories, cross-repository overlap ledgers, and disposition-safe ownership graphs`.
+- 2026-07-24 — Proposed non-authoritative refinement `017-F — Exact-generation file disposition manifests, blob-bound provenance, and successor rebinding`.
 
 ## Entry format
 
