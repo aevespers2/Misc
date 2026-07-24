@@ -126,6 +126,13 @@ def validate_candidate_workflow(root: Path) -> None:
             fail(f"documentation workflow action is not pinned as required: {pinned}")
     if "persist-credentials: false" not in body:
         fail("documentation workflow must disable persisted checkout credentials")
+    exact_group = "${{ github.workflow }}-${{ github.event.pull_request.head.sha || github.sha }}"
+    if exact_group not in body:
+        fail("documentation workflow concurrency must be bound to the immutable submitted SHA")
+    if re.search(r"cancel-in-progress:\s*true", body):
+        fail("documentation workflow must not cancel evidence collection for prior exact heads")
+    if "cancel-in-progress: false" not in body:
+        fail("documentation workflow must explicitly preserve every exact-head generation")
 
 
 def validate_planning_alignment(root: Path) -> None:
