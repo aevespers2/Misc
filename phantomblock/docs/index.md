@@ -8,9 +8,13 @@ XYZ is an implemented prototype for defensive firmware-integrity, hardware-anoma
 
 **Incubation-exit status:** `INCUBATION_EXIT_DOCUMENTED_DISPOSITION_UNAPPROVED`.
 
+**File-disposition status:** `FILE_DISPOSITION_MANIFEST_COMPLETE_FOR_FROZEN_SOURCE_DECISION_UNAPPROVED`.
+
 ## Choose a route
 
 - New reviewer: read [Incubation Status](incubation-status.md).
+- Component reviewer: inspect the [Component and Portfolio Overlap Inventory](component-overlap-inventory.md).
+- File-manifest reviewer: inspect the [Exact File-level Evidence and Disposition Manifest](file-disposition-manifest.md) and its [machine-readable companion](file-disposition-manifest-v1.json).
 - Architecture or disposition reviewer: inspect [Architecture and Trust Boundaries](architecture.md), the [Threat Model](threat-model.md), and the [Incubation Exit and Migration Playbook](incubation-exit-and-migration.md).
 - New contributor: begin with [Safe Onboarding](onboarding.md).
 - Developer: follow the [Developer Guide](developer-guide.md) and [Validation Roadmap](validation.md).
@@ -60,11 +64,15 @@ XYZ does not authorize exploitation, authentication bypass, firmware flashing, p
 
 Do not publish credentials, customer data, proprietary firmware, sensitive packet captures, private findings, or production evidence in Git, CI, Pages, issues, or public artifacts.
 
+## What is now verified as documentation evidence
+
+The frozen source `68703e138ffa1df26924dd4e018078a246531ace` has a 42-path manifest recording exact Git blob identities, component/evidence/sensitivity classes, limitations, owner vacancies, a fail-closed incubation disposition, correction route, and rollback treatment. The manifest files themselves are explicitly excluded to avoid a self-referential digest and any descendant source requires a new binding.
+
 ## What remains unresolved
 
 - permanent repository and owner;
 - dedicated migration, modular consolidation, evidence-preserving retirement, or continued-hold decision;
-- file-level component dispositions and source-to-target history map;
+- Architect-approved per-path dispositions and source-to-target history map;
 - canonical envelope and cross-repository contract ownership;
 - license and third-party data rights;
 - exact supported and unsupported platform matrix;
