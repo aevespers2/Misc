@@ -17,6 +17,7 @@ nav:
   - Start Here:
       - Overview: index.md
       - Incubation Status: incubation-status.md
+      - Incubation Exit and Migration: incubation-exit-and-migration.md
       - Safe Onboarding: onboarding.md
   - Design:
       - Why XYZ Exists: purpose.md
