@@ -2,15 +2,17 @@
 
 ## Preserved defensive research prototype
 
-XYZ is an implemented prototype for defensive firmware-integrity, hardware-anomaly, and external network-evidence assessment. It is preserved inside the portfolio’s `Misc` incubation repository while ownership, licensing, validation, publication, migration, retirement, and rollback decisions remain unresolved.
+XYZ is an implemented prototype for defensive firmware-integrity, hardware-anomaly, and external network-evidence assessment. It is preserved inside the portfolio’s `Misc` incubation repository while ownership, licensing, validation, publication, migration, consolidation, retirement, and rollback decisions remain unresolved.
 
 **Current status:** prototype code and documentation exist; release, deployment, certification, and operational authority are blocked.
+
+**Incubation-exit status:** `INCUBATION_EXIT_DOCUMENTED_DISPOSITION_UNAPPROVED`.
 
 ## Choose a route
 
 - New reviewer: read [Incubation Status](incubation-status.md).
+- Architecture or disposition reviewer: inspect [Architecture and Trust Boundaries](architecture.md), the [Threat Model](threat-model.md), and the [Incubation Exit and Migration Playbook](incubation-exit-and-migration.md).
 - New contributor: begin with [Safe Onboarding](onboarding.md).
-- Architecture reviewer: inspect [Architecture and Trust Boundaries](architecture.md) and the [Threat Model](threat-model.md).
 - Developer: follow the [Developer Guide](developer-guide.md) and [Validation Roadmap](validation.md).
 - Release or publication reviewer: read the repository-level `release.md` and `punchlist.md` before considering any workflow or artifact.
 
@@ -61,13 +63,16 @@ Do not publish credentials, customer data, proprietary firmware, sensitive packe
 ## What remains unresolved
 
 - permanent repository and owner;
+- dedicated migration, modular consolidation, evidence-preserving retirement, or continued-hold decision;
+- file-level component dispositions and source-to-target history map;
+- canonical envelope and cross-repository contract ownership;
 - license and third-party data rights;
 - exact supported and unsupported platform matrix;
 - trusted-baseline governance and key custody;
 - representative and adversarial validation;
 - false-positive and false-negative characterization;
-- privacy, security, disclosure, retention, and incident procedures;
+- privacy, security, disclosure, retention, correction, revocation, and incident procedures;
 - package, image, Pages, and release approval;
-- migration or retirement procedure and rollback evidence.
+- rollback and restored-state evidence.
 
 The repository does not claim certification, CMMC status, STIG approval, Army authorization, or an Authority to Operate.
