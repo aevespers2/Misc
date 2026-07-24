@@ -61,6 +61,7 @@ All notable product, architecture, implementation, release, and deployment chang
 - Documentation validation establishes structural consistency only; it does not validate detection, hardware support, security, release, publication, or operational capability.
 - 2026-07-24 — Required every changed descendant and resulting state to retain its own exact-head validation; historical passing evidence remains historical evidence only.
 - 2026-07-24 — Required the Markdown and JSON component inventories, lifecycle routes, status markers, diagram alternatives, and exact-source currentness to remain synchronized.
+- 2026-07-24 — Repaired documentation-workflow concurrency so every pull-request and `main` generation is isolated by immutable submitted SHA and cannot cancel evidence collection for an earlier exact head; added hostile regressions that reject mutable PR/ref grouping and cross-generation cancellation.
 
 ### Release
 
@@ -81,6 +82,7 @@ All notable product, architecture, implementation, release, and deployment chang
 ### FYSA-120
 
 - 2026-07-24 — Applied `CAT-011`, `CAT-012`, `CAT-013`, `CAT-017`, `CAT-018`, `CAT-019`, `CAT-031`, `CAT-032`, `CAT-040`, `CAT-052`, and `CAT-054` as a capability map, not proof of competence or authority.
+- 2026-07-24 — Applied `CAT-017`, `CAT-022`, `CAT-031`, `CAT-040`, `CAT-052`, `CAT-054`, and `CAT-059` to the exact-head evidence-continuity repair; existing refinement `031-L` covers this repair class.
 - 2026-07-24 — Proposed non-authoritative refinement `040-P — Incubation exit, authority-neutral migration, modular consolidation, and evidence-preserving retirement`, superseding the narrower local `040-H` proposal for this repository.
 - 2026-07-24 — Proposed non-authoritative refinement `013-M — Incubated component-family inventories, cross-repository overlap ledgers, and disposition-safe ownership graphs`.
 
