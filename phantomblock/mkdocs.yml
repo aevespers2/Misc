@@ -27,6 +27,7 @@ nav:
       - Portable host-observation role: portable-host-observation.md
       - JusticeForMe overlap: host-observation-overlap.md
       - Obstruction and gluing analysis: obstruction-and-gluing.md
+      - Incubation exit and migration: incubation-exit-and-migration.md
       - Ownership and release: ownership-and-release.md
   - Engineering:
       - Architecture: architecture.md
