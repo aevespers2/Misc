@@ -6,15 +6,16 @@
 
 This inventory classifies the observed XYZ / PhantomBlock component families and their likely portfolio overlaps. It supports an incubation-exit decision; it does **not** choose a destination, appoint an owner, accept an interface, authorize migration, certify behavior, or approve release, publication, deployment, credentials, firmware handling, packet capture, or disruptive response.
 
-The inventory is intentionally conservative. A path family is **observed** when repository documentation or package metadata identifies it. A component is **implemented prototype evidence** when code or configuration is stated to exist. Neither status establishes completeness, correctness, support, compatibility, or authority. A complete path-and-hash manifest remains a separate required artifact.
+The inventory is intentionally conservative. A path family is **observed** when repository documentation or package metadata identifies it. A component is **implemented prototype evidence** when code or configuration is stated to exist. Neither status establishes completeness, correctness, support, compatibility, or authority. The separate [exact file disposition manifest](file-disposition-manifest.md) now binds all 42 paths in frozen source `68703e138ffa1df26924dd4e018078a246531ace` to Git blobs and classifications; it remains an unapproved evidence record and every descendant requires rebinding.
 
 ## Evidence sources and precedence
 
 1. Exact repository source at the reviewed commit.
-2. `phantomblock/pyproject.toml` for package identity, dependency families, entry points, and source/test layout.
-3. `README.md`, `taskchain.md`, `release.md`, `punchlist.md`, and `changelog.md` for scope and lifecycle controls.
-4. `phantomblock/docs/architecture.md`, `developer-guide.md`, `threat-model.md`, and `incubation-exit-and-migration.md` for component boundaries and proposed dispositions.
-5. Historical workflow, package, image, and compliance records as historical evidence only.
+2. [Exact file disposition manifest](file-disposition-manifest.md) and its [machine-readable companion](file-disposition-manifest-v1.json).
+3. `phantomblock/pyproject.toml` for package identity, dependency families, entry points, and source/test layout.
+4. `README.md`, `taskchain.md`, `release.md`, `punchlist.md`, and `changelog.md` for scope and lifecycle controls.
+5. `phantomblock/docs/architecture.md`, `developer-guide.md`, `threat-model.md`, and `incubation-exit-and-migration.md` for component boundaries and proposed dispositions.
+6. Historical workflow, package, image, and compliance records as historical evidence only.
 
 When sources disagree, the conflict remains visible and the stronger claim is blocked.
 
@@ -115,23 +116,25 @@ flowchart LR
 
 ## Completion boundary
 
-This milestone completes a **component-family and repository-overlap inventory**. It does not complete the required exact file-level manifest. The next bounded artifact must enumerate every retained path with blob or content digest, component ID, evidence class, sensitive-data classification, source commit, proposed disposition, target or archive path, semantic owner or vacancy, known losses, correction route, and rollback treatment.
+The component-family inventory and the exact 42-path frozen-source manifest are complete as bounded review artifacts. They do not complete the Architect decision, final per-path dispositions, source-to-target or archive mapping, ownership, licensing, contract acceptance, migration, consolidation, retirement execution, publication, release, or deployment.
 
-Until that manifest and an Architect disposition exist:
+Until an Architect disposition exists:
 
-- Local P0.2 remains in review rather than done;
+- Local P0.2A remains in review rather than accepted;
 - source movement and consolidation remain blocked;
 - no package, image, Pages site, dashboard, service, adapter, or compliance claim may be promoted;
-- every overlap edge remains candidate or unsupported.
+- every overlap edge remains candidate or unsupported;
+- any changed source generation requires a new manifest binding.
 
 ## Reviewer onboarding
 
 1. Confirm the exact source commit and the current lifecycle documents.
-2. Review C01–C18 and mark any missing, duplicated, obsolete, or misclassified component family.
-3. Review each overlap edge without inferring ownership from code location or name similarity.
-4. Record conflicts, vacancies, sensitive-data concerns, and required witnesses.
-5. Do not select migration, consolidation, retirement, or hold within this inventory; route that decision to the Architect packet.
-6. Rebind or withdraw the inventory whenever source paths, package metadata, interfaces, overlaps, safety boundaries, or lifecycle status change.
+2. Verify the 42-path manifest and recompute its blob identities independently.
+3. Review C01-C18 and mark any missing, duplicated, obsolete, or misclassified component family.
+4. Review each overlap edge without inferring ownership from code location or name similarity.
+5. Record conflicts, vacancies, sensitive-data concerns, and required witnesses.
+6. Do not select migration, consolidation, retirement, or hold within this inventory; route that decision to the Architect packet.
+7. Rebind or withdraw the inventory whenever source paths, package metadata, interfaces, overlaps, safety boundaries, or lifecycle status change.
 
 ## FYSA-120 capability map
 
@@ -147,8 +150,9 @@ Applied capabilities:
 - `032-A`, `032-D`, and `032-E` for distributed boundaries, partial failure, recovery, observability, and incident diagnosis;
 - `040-A`, `040-B`, `040-D`, and `040-E` for system archaeology, dependency risk, migration, rollback, and continuity.
 
-Proposed non-authoritative refinement:
+Proposed non-authoritative refinements:
 
-**`013-M — Incubated component-family inventories, cross-repository overlap ledgers, and disposition-safe ownership graphs`**.
+- **`013-M — Incubated component-family inventories, cross-repository overlap ledgers, and disposition-safe ownership graphs`**.
+- **`017-F — Exact-generation file disposition manifests, blob-bound provenance, and successor rebinding`**.
 
 Taxonomy selection does not establish competence, appointment, ownership, approval, or authority.
