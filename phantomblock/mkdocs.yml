@@ -19,6 +19,8 @@ nav:
       - Incubation Status: incubation-status.md
       - Component and Portfolio Overlap Inventory: component-overlap-inventory.md
       - Machine-readable Component Inventory: component-overlap-inventory-v1.json
+      - Exact File Disposition Manifest: file-disposition-manifest.md
+      - Machine-readable File Manifest: file-disposition-manifest-v1.json
       - Incubation Exit and Migration: incubation-exit-and-migration.md
       - Safe Onboarding: onboarding.md
   - Design:
